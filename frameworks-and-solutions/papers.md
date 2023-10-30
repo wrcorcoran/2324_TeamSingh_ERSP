@@ -52,7 +52,7 @@ graph domain. We present a graph algebra extended from
 the relational algebra in which the selection operator is generalized to graph pattern matching and a composition operator is introduced for rewriting matched graphs.
 
 ### Specific to Class Literature Search:
-1. [Querying in the Age of Graph Databases and Knowledge Graphs](https://dl.acm.org/doi/abs/10.1145/3448016.3457545)
-2. [A Query Language Perspective on Graph Learning](https://dl.acm.org/doi/abs/10.1145/3584372.3589936)
-3. [The Expressive Power of Graph Neural Networks as a Query Language](https://sigmodrecord.org/publications/sigmodRecord/2006/pdfs/03_Principles_Barcelo.pdf)
+1. [Querying in the Age of Graph Databases and Knowledge Graphs](https://dl.acm.org/doi/abs/10.1145/3448016.3457545) **WILL**
+2. [A Query Language Perspective on Graph Learning](https://dl.acm.org/doi/abs/10.1145/3584372.3589936) **NIYATI**
+3. [The Expressive Power of Graph Neural Networks as a Query Language](https://sigmodrecord.org/publications/sigmodRecord/2006/pdfs/03_Principles_Barcelo.pdf) **WYATT**
 4. [Visualizing Graph Neural Networks With CorGIE: Corresponding a Graph to Its Embedding](https://arxiv.org/abs/2106.12839)
