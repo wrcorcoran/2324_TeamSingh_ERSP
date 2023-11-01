@@ -1,5 +1,4 @@
 # Papers
-Will Corcoran
 
 ### Key Questions:
 1. What literature already exists?
@@ -21,6 +20,9 @@ an approach to corresponding an input graph to its node embedding (aka latent sp
 used for prediction. We abstract the data and tasks, and develop an interactive multi-view interface called CorGIE to instantiate the
 abstraction.
 
+#### [Querying in the Age of Graph Databases and Knowledge Graphs](https://dl.acm.org/doi/abs/10.1145/3448016.3457545)
+- 
+
 #### [Expressive Power of Graph Neural Networks as a Query Language](https://dl.acm.org/doi/pdf/10.1145/3442322.3442324)
 - > In the context of databases, one can see a graph as a graph database [27, 5],and a classifier f as a query language: On input graph (database) G, the query would return all the nodes in G that are classified as true by f. Thus, answering the question above implies understanding what type of queries can be expressed by GNNs.
 - [GitHub of Code](https://github.com/juanpablos/GNN-logic)
@@ -30,6 +32,8 @@ abstraction.
 - Here is a paper which outlines ```GEL```, a Graph Embedding Language. Rather than a coding language, it's expressed mathematically.
 - > More precisely, we define a general graph embedding language, referred to as gel in which graph neural networks (and other graph learning methods) can be expressed. The language is very similar to the aggregate query languages considered for studying the expressive power of SQL [51, 71].
 - As it is mathematically developed, there is no formal code.
+
+----
 
 #### [Query Driven-Graph Neural Networks for Community Search: From Non-Attributed, Attributed, to Interactive Attributed](https://arxiv.org/pdf/2104.03583.pdf)
 - This model seems to take a query of a database, and transform it into its own, respective GNN. It's possible we can get ideas from this paper, but the solution (or similar solutions), are not present.
@@ -50,6 +54,8 @@ To allow for flexible compositions of graph structures, we
 extend the notion of formal languages from strings to the
 graph domain. We present a graph algebra extended from
 the relational algebra in which the selection operator is generalized to graph pattern matching and a composition operator is introduced for rewriting matched graphs.
+
+----
 
 ### Specific to Class Literature Search:
 1. [Querying in the Age of Graph Databases and Knowledge Graphs](https://dl.acm.org/doi/abs/10.1145/3448016.3457545) **WILL**
