@@ -20,15 +20,15 @@ an approach to corresponding an input graph to its node embedding (aka latent sp
 used for prediction. We abstract the data and tasks, and develop an interactive multi-view interface called CorGIE to instantiate the
 abstraction.
 
-#### [Querying in the Age of Graph Databases and Knowledge Graphs](https://dl.acm.org/doi/abs/10.1145/3448016.3457545)
+#### [Querying in the Age of Graph Databases and Knowledge Graphs, *Will*](https://dl.acm.org/doi/abs/10.1145/3448016.3457545)
 - 
 
-#### [Expressive Power of Graph Neural Networks as a Query Language](https://dl.acm.org/doi/pdf/10.1145/3442322.3442324)
+#### [Expressive Power of Graph Neural Networks as a Query Language, *Wyatt*](https://dl.acm.org/doi/pdf/10.1145/3442322.3442324)
 - > In the context of databases, one can see a graph as a graph database [27, 5],and a classifier f as a query language: On input graph (database) G, the query would return all the nodes in G that are classified as true by f. Thus, answering the question above implies understanding what type of queries can be expressed by GNNs.
 - [GitHub of Code](https://github.com/juanpablos/GNN-logic)
 - Based on how I've understood this, they are more focused on the binary classification of a node in a graph (either true or false), rather than the querying of a node both in the database and on the GNN.
 
-#### [A Query Language Perspective on Graph Learning](https://dl.acm.org/doi/pdf/10.1145/3584372.3589936)
+#### [A Query Language Perspective on Graph Learning, *Niyati*](https://dl.acm.org/doi/pdf/10.1145/3584372.3589936)
 - Here is a paper which outlines ```GEL```, a Graph Embedding Language. Rather than a coding language, it's expressed mathematically.
 - > More precisely, we define a general graph embedding language, referred to as gel in which graph neural networks (and other graph learning methods) can be expressed. The language is very similar to the aggregate query languages considered for studying the expressive power of SQL [51, 71].
 - As it is mathematically developed, there is no formal code.
