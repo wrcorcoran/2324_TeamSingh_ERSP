@@ -40,6 +40,11 @@ abstraction.
 - This model seems to take a query of a database, and transform it into its own, respective GNN. It's possible we can get ideas from this paper, but the solution (or similar solutions), are not present.
 - No publicly available code.
 
+#### [](https://arxiv.org/pdf/1702.08734.pdf)
+
+
+----
+
 #### [Comparing and Exploring High-Dimensional Data with Dimensionality Reduction Algorithms and Matrix Visualizations, Niyati](https://dl.acm.org/doi/pdf/10.1145/3399715.3399875)
 - This focuses more on the visualization between high-dimensional data, and low dimensional-data. It's moreso used on matrices rather than Graphs / GNNs, but it could be a useful idea. 
 - > a tool for visual analysis for comparing distances of high-dimensional (HD) data and their low-dimensional projections.
