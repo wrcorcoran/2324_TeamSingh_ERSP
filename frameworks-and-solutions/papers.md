@@ -34,12 +34,13 @@ abstraction.
 - As it is mathematically developed, there is no formal code.
 
 ----
+#### [Local Intrinsic Dimensionality Measures for Graphs, with Applications to Graph Embeddings](https://arxiv.org/pdf/2208.11986.pdf)
 
-#### [Query Driven-Graph Neural Networks for Community Search: From Non-Attributed, Attributed, to Interactive Attributed](https://arxiv.org/pdf/2104.03583.pdf)
+#### [Query Driven-Graph Neural Networks for Community Search: From Non-Attributed, Attributed, to Interactive Attributed, Wyatt](https://arxiv.org/pdf/2104.03583.pdf)
 - This model seems to take a query of a database, and transform it into its own, respective GNN. It's possible we can get ideas from this paper, but the solution (or similar solutions), are not present.
 - No publicly available code.
 
-#### [Comparing and Exploring High-Dimensional Data with Dimensionality Reduction Algorithms and Matrix Visualizations](https://dl.acm.org/doi/pdf/10.1145/3399715.3399875)
+#### [Comparing and Exploring High-Dimensional Data with Dimensionality Reduction Algorithms and Matrix Visualizations, Niyati](https://dl.acm.org/doi/pdf/10.1145/3399715.3399875)
 - This focuses more on the visualization between high-dimensional data, and low dimensional-data. It's moreso used on matrices rather than Graphs / GNNs, but it could be a useful idea. 
 - > a tool for visual analysis for comparing distances of high-dimensional (HD) data and their low-dimensional projections.
 
