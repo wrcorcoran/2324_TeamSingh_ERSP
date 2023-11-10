@@ -21,7 +21,25 @@ used for prediction. We abstract the data and tasks, and develop an interactive 
 abstraction.
 
 #### [Querying in the Age of Graph Databases and Knowledge Graphs, *Will*](https://dl.acm.org/doi/abs/10.1145/3448016.3457545)
-- 
+For the most part, this paper is a survey of the past 10 years of graph querying. 
+
+They begin by defining "knowledge graphs," which they state are: "a
+software object (artifact) that represents (codifies), integrates and
+produces knowledge."
+
+They claim the biggest benefit of knowledge graph are the added capabilities to learn new things. They mention this is through neural networks or other logical reasoners (they outline a RegEx formula for this). However, compared to previous graph representations, this is a new capability.
+
+They expand on the benefits of vector-labeled graphs and their impact in GNNs. They state that
+> "vector-labeled graphs are defined in a way that
+unifies the use of labels and properties, and allows to include in
+a simple way extra values that are necessary for message-passing
+graph algorithms [49], such as the Weisfeiler-Lehman graph isomorphism
+test [39, 41, 83], and when graphs are used as input of
+graph neural networks [58, 72]."
+
+For the most part, I feel like I understand what this means, but I don't necessarily under the WL test. I understand it's similar to node colouring, but I don't understand how this can be used algorithmically for message passing. They also state $FOC^2$ is equivalent to the WL test. I understand that $FO^2$ is first-order logic with two unknowns, but how can we define $FOC^2$. They give an intense mathematically definition that has to do with quantifier dimensionality.
+
+Then, they formally defined a GNN. I'll leave the notation in the paper. However, they claim that a GNN process follows three functions, $AGG$ and $COMB$ for each layer, along with $CSL$ at the end.
 
 #### [Expressive Power of Graph Neural Networks as a Query Language, *Wyatt*](https://dl.acm.org/doi/pdf/10.1145/3442322.3442324)
 - > In the context of databases, one can see a graph as a graph database [27, 5],and a classifier f as a query language: On input graph (database) G, the query would return all the nodes in G that are classified as true by f. Thus, answering the question above implies understanding what type of queries can be expressed by GNNs.
@@ -42,6 +60,28 @@ abstraction.
 
 #### [Billion-scale similarity search with GPUs (FAISS), *Will*](https://arxiv.org/pdf/1702.08734.pdf)
 
+This is the paper in tandem with the creation of FAISS. It takes more of a focus to the impressive feats accomplished by the team in terms of calculation time. Most of this has to do with the usage of GPUs to run the software. They claim they can perform k-NN searches with 55% of the optimal, theoretical solutions, which is 8.5x better than the previous state-of-the-art. 
+
+> This paper makes the following contributions:
+> - a GPU k-selection algorithm, operating in fast register
+memory and 
+exible enough to be fusable with other
+kernels, for which we provide a complexity analysis;
+> - a near-optimal algorithmic layout for exact and ap-
+proximate k-nearest neighbor search on GPU;
+> - a range of experiments that show that these improve-
+ments outperform previous art by a large margin on
+mid- to large-scale nearest-neighbor search tasks, in
+single or multi-GPU congurations.
+
+
+So, for the most part the paper doesn't concern our project, as we are not focused on GPU optimization with the searches. However, they do outline the k-NN algorithm used by FAISS and give a couple wonderful examples.
+
+Here is the k-NN algorithm:
+<img src="assets/formula.png" />
+
+Here is an example of the kinds of k-NN searches FAISS can perform:
+<img src="assets/flowers.png" />
 
 ----
 ### Less Relevant Papers:
