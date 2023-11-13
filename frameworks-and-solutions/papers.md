@@ -48,6 +48,7 @@ Then, they formally defined a GNN. I'll leave the notation in the paper. However
 <!-- - > In the context of databases, one can see a graph as a graph database [27, 5],and a classifier f as a query language: On input graph (database) G, the query would return all the nodes in G that are classified as true by f. Thus, answering the question above implies understanding what type of queries can be expressed by GNNs.
 - [GitHub of Code](https://github.com/juanpablos/GNN-logic)
 - Based on how I've understood this, they are more focused on the binary classification of a node in a graph (either true or false), rather than the querying of a node both in the database and on the GNN. -->
+This paper is mainly focused on what kind of graph architectures are able to classify nodes correctly. They found Aggregate-Combination-Readout GNNs (ACR-GNN) to be the most effective with the FOC_2 language. We should note that they were only testing the binary classification of T/F on the nodes by some function f, so it doesn't particularly apply to querying a node in a database. I'm not sure that this paper is too helpful or relevant to our issue.
 
 #### [A Query Language Perspective on Graph Learning, *Niyati*](https://dl.acm.org/doi/pdf/10.1145/3584372.3589936)
 <!-- - Here is a paper which outlines ```GEL```, a Graph Embedding Language. Rather than a coding language, it's expressed mathematically.
