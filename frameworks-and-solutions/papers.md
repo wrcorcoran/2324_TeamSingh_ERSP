@@ -41,6 +41,9 @@ For the most part, I feel like I understand what this means, but I don't necessa
 
 Then, they formally defined a GNN. I'll leave the notation in the paper. However, they claim that a GNN process follows three functions, $AGG$ and $COMB$ for each layer, along with $CSL$ at the end.
 
+#### [k-Nearest Neighbor Learning with Graph Neural Networks, *Will*](https://www.mdpi.com/2227-7390/9/8/830)
+- Just encountered, will summarize within the next 24 hours
+
 #### [Expressive Power of Graph Neural Networks as a Query Language, *Wyatt*](https://dl.acm.org/doi/pdf/10.1145/3442322.3442324)
 <!-- - > In the context of databases, one can see a graph as a graph database [27, 5],and a classifier f as a query language: On input graph (database) G, the query would return all the nodes in G that are classified as true by f. Thus, answering the question above implies understanding what type of queries can be expressed by GNNs.
 - [GitHub of Code](https://github.com/juanpablos/GNN-logic)
