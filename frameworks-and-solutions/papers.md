@@ -42,21 +42,21 @@ For the most part, I feel like I understand what this means, but I don't necessa
 Then, they formally defined a GNN. I'll leave the notation in the paper. However, they claim that a GNN process follows three functions, $AGG$ and $COMB$ for each layer, along with $CSL$ at the end.
 
 #### [Expressive Power of Graph Neural Networks as a Query Language, *Wyatt*](https://dl.acm.org/doi/pdf/10.1145/3442322.3442324)
-- > In the context of databases, one can see a graph as a graph database [27, 5],and a classifier f as a query language: On input graph (database) G, the query would return all the nodes in G that are classified as true by f. Thus, answering the question above implies understanding what type of queries can be expressed by GNNs.
+<!-- - > In the context of databases, one can see a graph as a graph database [27, 5],and a classifier f as a query language: On input graph (database) G, the query would return all the nodes in G that are classified as true by f. Thus, answering the question above implies understanding what type of queries can be expressed by GNNs.
 - [GitHub of Code](https://github.com/juanpablos/GNN-logic)
-- Based on how I've understood this, they are more focused on the binary classification of a node in a graph (either true or false), rather than the querying of a node both in the database and on the GNN.
+- Based on how I've understood this, they are more focused on the binary classification of a node in a graph (either true or false), rather than the querying of a node both in the database and on the GNN. -->
 
 #### [A Query Language Perspective on Graph Learning, *Niyati*](https://dl.acm.org/doi/pdf/10.1145/3584372.3589936)
-- Here is a paper which outlines ```GEL```, a Graph Embedding Language. Rather than a coding language, it's expressed mathematically.
+<!-- - Here is a paper which outlines ```GEL```, a Graph Embedding Language. Rather than a coding language, it's expressed mathematically.
 - > More precisely, we define a general graph embedding language, referred to as gel in which graph neural networks (and other graph learning methods) can be expressed. The language is very similar to the aggregate query languages considered for studying the expressive power of SQL [51, 71].
-- As it is mathematically developed, there is no formal code.
+- As it is mathematically developed, there is no formal code. -->
 
 ----
 #### [Local Intrinsic Dimensionality Measures for Graphs, with Applications to Graph Embeddings, *Niyati*](https://arxiv.org/pdf/2208.11986.pdf)
 
 #### [Query Driven-Graph Neural Networks for Community Search: From Non-Attributed, Attributed, to Interactive Attributed, *Wyatt*](https://arxiv.org/pdf/2104.03583.pdf)
-- This model seems to take a query of a database, and transform it into its own, respective GNN. It's possible we can get ideas from this paper, but the solution (or similar solutions), are not present.
-- No publicly available code.
+<!-- - This model seems to take a query of a database, and transform it into its own, respective GNN. It's possible we can get ideas from this paper, but the solution (or similar solutions), are not present.
+- No publicly available code. -->
 
 #### [Billion-scale similarity search with GPUs (FAISS), *Will*](https://arxiv.org/pdf/1702.08734.pdf)
 
