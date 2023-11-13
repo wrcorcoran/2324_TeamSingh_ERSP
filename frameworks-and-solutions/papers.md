@@ -10,16 +10,6 @@
 
 ### Relevant Papers:
 
-#### [Visualizing Graph Neural Networks With CorGIE: Corresponding a Graph to Its Embedding (CorGIE)](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9705082)
-- [Code](https://github.com/zipengliu/corgie-ui/)
-- [Tutorial](https://osf.io/j56hu)
-- This is by far the most similar paper to our project, and in all honestly, I don't know if I see an apparent difference between the two. I'd like a review from Danish to see the similarities and what exactly differs from our outcome goal.
-- I'm honestly not sure what they are missing. 
-- > We propose
-an approach to corresponding an input graph to its node embedding (aka latent space), a common component of GNNs that is later
-used for prediction. We abstract the data and tasks, and develop an interactive multi-view interface called CorGIE to instantiate the
-abstraction.
-
 #### [Querying in the Age of Graph Databases and Knowledge Graphs, *Will*](https://dl.acm.org/doi/abs/10.1145/3448016.3457545)
 For the most part, this paper is a survey of the past 10 years of graph querying. 
 
@@ -54,7 +44,6 @@ Then, they formally defined a GNN. I'll leave the notation in the paper. However
 - > More precisely, we define a general graph embedding language, referred to as gel in which graph neural networks (and other graph learning methods) can be expressed. The language is very similar to the aggregate query languages considered for studying the expressive power of SQL [51, 71].
 - As it is mathematically developed, there is no formal code. -->
 
-----
 #### [Local Intrinsic Dimensionality Measures for Graphs, with Applications to Graph Embeddings, *Niyati*](https://arxiv.org/pdf/2208.11986.pdf)
 
 #### [Query Driven-Graph Neural Networks for Community Search: From Non-Attributed, Attributed, to Interactive Attributed, *Wyatt*](https://arxiv.org/pdf/2104.03583.pdf)
@@ -85,6 +74,17 @@ Here is the k-NN algorithm:
 
 Here is an example of the kinds of k-NN searches FAISS can perform:
 <img src="assets/flowers.png" />
+
+
+###### [Visualizing Graph Neural Networks With CorGIE: Corresponding a Graph to Its Embedding (CorGIE)](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9705082)
+- [Code](https://github.com/zipengliu/corgie-ui/)
+- [Tutorial](https://osf.io/j56hu)
+- This is by far the most similar paper to our project, and in all honestly, I don't know if I see an apparent difference between the two. I'd like a review from Danish to see the similarities and what exactly differs from our outcome goal.
+- I'm honestly not sure what they are missing. 
+- > We propose
+an approach to corresponding an input graph to its node embedding (aka latent space), a common component of GNNs that is later
+used for prediction. We abstract the data and tasks, and develop an interactive multi-view interface called CorGIE to instantiate the
+abstraction.
 
 ----
 ### Less Relevant Papers:
