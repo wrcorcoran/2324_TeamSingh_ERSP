@@ -13,3 +13,17 @@ However, what is interesting is you write the query in plain text (i.e. in AQL).
 ---
 
 This is actually a pretty solid way of implementing a query language. Provides a pretty good illustration of a way we could do it. Rather than going through the headache of creating a language from scratch we could take it as a string through and API call, and have it work just the same.
+
+Here is an example from the Colab:
+``` Python
+reachabilty_query = """WITH Cities
+FOR vertex, edge, path
+  IN 1..5 
+  OUTBOUND 'Cities/London'
+  GRAPH 'RailNetwork'
+  FILTER SUM(path.edges[*].travel_time) < 5
+  return 
+  { 'city': vertex._key,
+    'path': CONCAT_SEPARATOR(" -> ", path.edges[*]._to)
+  }"""
+```
