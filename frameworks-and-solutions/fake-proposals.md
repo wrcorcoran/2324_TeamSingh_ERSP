@@ -1,6 +1,8 @@
 # Fake Proposals
 Thanks ChatGPT!
 
+Here a [link](https://www.overleaf.com/1878798846vskxfgyhttmj#004ea9) to our current proposal for the class. Ignore the 'related work' sections, that was busy work from class.
+
 ## Will
 Title: Multi-Modal Data Integration and Analysis through Graph Neural Networks, k-Nearest-Neighbors, and Custom Query Language
 
