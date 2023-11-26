@@ -1,2 +1,5 @@
 */MNIST
 */basic-classification.pth
+*.npy
+*/corgie-ui
+*/corgie-preprocess-server
