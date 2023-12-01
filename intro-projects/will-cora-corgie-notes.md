@@ -52,7 +52,7 @@ How could this appear in SQL?
 
 ```
 SELECT * FROM G
-    where feature[1077] == 1
+    where feature[1177] is '1'
     and
     FIND 5 NEAREST 
 ```
