@@ -42,7 +42,9 @@ This paper is mainly focused on what kind of graph architectures are able to cla
 - > More precisely, we define a general graph embedding language, referred to as gel in which graph neural networks (and other graph learning methods) can be expressed. The language is very similar to the aggregate query languages considered for studying the expressive power of SQL [51, 71].
 - As it is mathematically developed, there is no formal code. -->
 
-#### [Learning Discrete Structures for Graph Neural Networks](https://arxiv.org/pdf/1903.11960.pdf)
+#### [Learning Discrete Structures for Graph Neural Networks(KNNS and GNNs)](https://arxiv.org/pdf/1903.11960.pdf)
+
+#### [Graph neural networks: A review of methods and applications (Basic GNN paper)](https://arxiv.org/ftp/arxiv/papers/1812/1812.08434.pdf)
 
 #### [Local Intrinsic Dimensionality Measures for Graphs, with Applications to Graph Embeddings, *Niyati*](https://arxiv.org/pdf/2208.11986.pdf)
 
