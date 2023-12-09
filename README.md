@@ -25,7 +25,7 @@
 <!-- LICENSE -->
 
 ## Research Proposal
-<object data="../frameworks-and-solutions/assets/SinghProjectProposal-Final-Final.pdf" width="1000" height="1000" type='application/pdf'></object>
+(Click here!)["../frameworks-and-solutions/assets/SinghProjectProposal-Final-Final.pdf"]
 
 ## Reproduction
 > Currently, there is no software to reproduce any of our findings. Soon to come.
