@@ -24,6 +24,9 @@
 - Project can be extended to consider different ways of reducing distortions in embeddings and measuring the local dimensionality of the embedding space.
 <!-- LICENSE -->
 
+## Research Proposal
+<object data="../frameworks-and-solutions/assets/SinghProjectProposal-Final-Final.pdf" width="1000" height="1000" type='application/pdf'></object>
+
 ## Reproduction
 > Currently, there is no software to reproduce any of our findings. Soon to come.
 
