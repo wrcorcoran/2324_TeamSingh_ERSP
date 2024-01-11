@@ -48,6 +48,8 @@
 #### Specific Questions:
 - What is Gherkin? Encountered it while looking into the OpenCypher codebase.
 
+#### Relevant Papers / Links:
+
 #### Other Notes:
 
 <!-- Key Findings -->
