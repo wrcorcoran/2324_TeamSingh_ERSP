@@ -9,7 +9,7 @@
     </li>
     <li><a href="#fall-summary">Fall Summary</a></li>
     <li><a href="#winter-summary">Winter Summary</a></li>
-    <li><a href="#reproduction">Reproduction</a></li>
+    <li><a href="#technology">Technology</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -38,9 +38,12 @@
 ### [Research Log](/Winter2023/ResearchLog.md)
 
 <!-- REPRODUCTION -->
-## Reproduction
+## Technology
+As we are investigating two different database softwares to build on top of, we have two different forks of those repositories. 
 
-> Currently, there is no software to reproduce any of our findings. Soon to come.
+ArangoDB fork: [**arangodb_ersp**](https://github.com/wrcorcoran/arangodb_ersp)
+
+OpenCypher fork: [**openCypher_ersp**](https://github.com/wrcorcoran/openCypher_ersp)
 
 ## License
 
