@@ -19,10 +19,12 @@
     <li><a href="#key-findings">Key Findings</a></li>
     <li><a href="#possible-solutions">Possible Solutions</a></li>
     <li><a href="#glossary">Glossary</a></li>
-    <li><a href="#questions">Questions</a></li>
+    <li><a href="#overall-questions">Overall Questions</a></li>
   </ol>
 </details>
 
+**Key:**
+✅ - complete | ⏰ - in progress | ❌ - struggle / cannot complete
 <!-- Weekly Updates -->
 ## Weekly Updates
 ### Week One
@@ -33,17 +35,22 @@
 
 #### Team Tasks:
 1. ✅ Reorganize GitHub
-2. Fork [OpenCypher](https://github.com/opencypher/openCypher) and [ArangoDB](https://github.com/arangodb/arangodb).
-3. Setup Dockerfile so ArangoDB and OpenCypher will work on all machines. 
-4. Beginning looking into documentation for each. 
-5. Find CFG implementations in both codebases. 
-6. Reach out to the teams of both and ask if they have the feature we are looking for. 
+2. ✅ Fork [OpenCypher](https://github.com/opencypher/openCypher) and [ArangoDB](https://github.com/arangodb/arangodb).
+3. ⏰ Setup Dockerfile so ArangoDB and OpenCypher will work on all machines. 
+4. Beginning looking into documentation for both [OpenCypher](https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf) and [ArangoDB](https://docs.arangodb.com/3.11/aql/). 
+5. ✅ Find CFG implementations in both codebases. 
+6. ⏰ Begin to understand how the CFG works in parallel with the rest of the codebase.
+7. Reach out to the teams of both and ask if they have the feature we are looking for. 
 
 #### Individual Tasks:
 1. Wyatt - research and understand CFGs
 
+#### In Progess:
+- Working on creating a Dockerfile to run both ArangoDB and OpenCypher on different devices.
+
 #### Accomplishments:
 - January 10th: rearranged GitHub to be more friendly towards the year's project. Added space for research logs and key findings, glossary, etc.
+- January 12th: forked codebases for both ArangoDB and OpenCypher, [arangodb_esrp](https://github.com/wrcorcoran/arangodb_ersp) and [opencypher](https://github.com/wrcorcoran/openCypher_ersp).
 
 #### Specific Questions:
 - What is Gherkin? Encountered it while looking into the OpenCypher codebase.
@@ -51,6 +58,8 @@
 #### Relevant Papers / Links:
 
 #### Other Notes:
+- ArangoDB grammar is found in 'arangod/grammar.cpp' and 'arangodb/grammar.hpp' and 'grammar.y'. Have not identifying the exact files (and what they do), but that will be the next step.
+- OpenCypher's grammar is found under 'grammar' (wow!). Includes a README.md with specifics about the grammar.
 
 <!-- Key Findings -->
 ## Key Findings
@@ -65,5 +74,5 @@ Currently, none.
 Currently, none.
 
 <!-- Questions -->
-## Questions
+## Overall Questions
 Currently, none.
