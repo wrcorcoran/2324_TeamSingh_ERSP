@@ -41,23 +41,28 @@
 5. ✅ Find CFG implementations in both codebases. 
 6. ⏰ Begin to understand how the CFG works in parallel with the rest of the codebase.
 7. Reach out to the teams of both and ask if they have the feature we are looking for. 
+8. Update pushing functionality for both repos.
 
 #### Individual Tasks:
-1. Wyatt - research and understand CFGs
+1. ⏰ Wyatt - research and understand CFGs
 
 #### In Progess:
 - Working on creating a Dockerfile to run both ArangoDB and OpenCypher on different devices.
 
 #### Accomplishments:
-- January 10th: rearranged GitHub to be more friendly towards the year's project. Added space for research logs and key findings, glossary, etc.
-- January 12th: forked codebases for both ArangoDB and OpenCypher, [arangodb_esrp](https://github.com/wrcorcoran/arangodb_ersp) and [opencypher](https://github.com/wrcorcoran/openCypher_ersp).
+- January 10th: 
+  - rearranged GitHub to be more friendly towards the year's project. Added space for research logs and key findings, glossary, etc.
+- January 12th: 
+  - forked codebases for both ArangoDB and OpenCypher, [arangodb_esrp](https://github.com/wrcorcoran/arangodb_ersp) and [opencypher](https://github.com/wrcorcoran/openCypher_ersp).
+  - updated README.md for both and added collaborators along with proper permissions.
+  - located directory for grammars in both codebases.
 
 #### Specific Questions:
 - What is Gherkin? Encountered it while looking into the OpenCypher codebase.
 
 #### Relevant Papers / Links:
 
-#### Other Notes:
+#### Notes:
 - ArangoDB grammar is found in 'arangod/grammar.cpp' and 'arangodb/grammar.hpp' and 'grammar.y'. Have not identifying the exact files (and what they do), but that will be the next step.
 - OpenCypher's grammar is found under 'grammar' (wow!). Includes a README.md with specifics about the grammar.
 
