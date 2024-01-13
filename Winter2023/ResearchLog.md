@@ -41,10 +41,10 @@
 5. ✅ Find CFG implementations in both codebases. 
 6. ⏰ Begin to understand how the CFG works in parallel with the rest of the codebase.
 7. Reach out to the teams of both and ask if they have the feature we are looking for. 
-8. Update pushing functionality for both repos.
+8. ⏰ Update pushing functionality for both repos.
 
 #### Individual Tasks:
-1. ⏰ Wyatt - research and understand CFGs
+1. Wyatt - research and understand CFGs
 
 #### In Progess:
 - Working on creating a Dockerfile to run both ArangoDB and OpenCypher on different devices.
@@ -61,6 +61,10 @@
 - What is Gherkin? Encountered it while looking into the OpenCypher codebase.
 
 #### Relevant Papers / Links:
+- [ArangoDB Github](https://github.com/arangodb/arangodb)
+- [ArangoDB documentation](https://docs.arangodb.com/3.11/aql/)
+- [OpenCypher Github](https://github.com/opencypher/openCypher)
+- [OpenCypher documentation](https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf)
 
 #### Notes:
 - ArangoDB grammar is found in 'arangod/grammar.cpp' and 'arangodb/grammar.hpp' and 'grammar.y'. Have not identifying the exact files (and what they do), but that will be the next step.
