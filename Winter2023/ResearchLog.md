@@ -37,13 +37,14 @@
 1. ✅ Reorganize GitHub
 2. ✅ Fork [OpenCypher](https://github.com/opencypher/openCypher) and [ArangoDB](https://github.com/arangodb/arangodb).
 3. ❌ Setup Dockerfile so ArangoDB and OpenCypher will work on all machines. 
-    - At least try and setup ArangoDB on machine (Will's), step in the right direction.
-4. Beginning looking into documentation for both [OpenCypher](https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf) and [ArangoDB](https://docs.arangodb.com/3.11/aql/). 
-5. ✅ Find CFG implementations in both codebases. 
-6. ⏰ Begin to understand how the CFG works in parallel with the rest of the codebase.
-7. Reach out to the teams of both and ask if they have the feature we are looking for. 
+    - Too many setup operations...Dockerfile would be unrealistic and a waste of time.
+4. Setup ArangoDB and OpenCypher in CSIL, create straightforward instructions for rest of team.
+5. Beginning looking into documentation for both [OpenCypher](https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf) and [ArangoDB](https://docs.arangodb.com/3.11/aql/). 
+6. ✅ Find CFG implementations in both codebases. 
+7. ⏰ Begin to understand how the CFG works in parallel with the rest of the codebase.
+8. Reach out to the teams of both and ask if they have the feature we are looking for. 
 8. ✅ Update pushing functionality for both repos.
-9. Look into the CFGs in both and try to understand them. 
+10. Look into the CFGs in both and try to understand them. 
 
 #### Individual Tasks:
 1. Wyatt - research and understand CFGs
@@ -62,6 +63,9 @@
   - located ```grammar_tools```, which the Grammar specifications by openCypher. 
   - Tried to run both ArangoDB and OpenCypher's GitHubs and ran into errors for both. See ```Struggles``` for more information.
   - Working on following the ArangoDB specifications for [contributing](https://github.com/arangodb/arangodb/blob/devel/CONTRIBUTING.md#building).
+- January 15th:
+  - decided that the requirements to set up a Dockerfile for each would be too much, as they both require a large amount of steps.
+  - decided to move to CSIL, with doing this, create documentation to set up and install. 
 
 #### Specific Questions:
 - What is Gherkin? Encountered it while looking into the OpenCypher codebase.
@@ -85,7 +89,6 @@
 #### Struggles:
 - Running into Maven build errors when trying to execute the ```mvn -U clean install -P scala-213 -Dlicense.skip``` command. Unsure if this is because of something I don't have installed correctly or a dependency failure further up.
   - The specific error is ```org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project grammar: Fatal error compiling: invalid target release: 11 -> [Help 1]```. I've ran it in debug mode and get messages that are relatively unreadable. Not sure where to go here.
-- Likewise, ArangoDB requires an account to run. 
 
 <!-- Key Findings -->
 ## Key Findings
