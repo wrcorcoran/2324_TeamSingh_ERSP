@@ -61,7 +61,7 @@
 - January 13th:
   - located ```grammar_tools```, which the Grammar specifications by openCypher. 
   - Tried to run both ArangoDB and OpenCypher's GitHubs and ran into errors for both. See ```Struggles``` for more information.
-  - Working on following the ArangoDB specifications for contributing ()
+  - Working on following the ArangoDB specifications for [contributing](https://github.com/arangodb/arangodb/blob/devel/CONTRIBUTING.md#building).
 
 #### Specific Questions:
 - What is Gherkin? Encountered it while looking into the OpenCypher codebase.
