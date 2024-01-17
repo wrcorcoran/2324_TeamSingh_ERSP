@@ -103,6 +103,8 @@
 - January 15th:
   - decided that the requirements to set up a Dockerfile for each would be too much, as they both require a large amount of steps.
   - decided to move to CSIL, with doing this, create documentation to set up and install. 
+- January 16th: 
+  - got verified for CSC, able to clone both directories. Currently, working on initializing and running both. 
 
 #### Specific Questions:
 - 
