@@ -104,7 +104,13 @@
   - decided that the requirements to set up a Dockerfile for each would be too much, as they both require a large amount of steps.
   - decided to move to CSIL, with doing this, create documentation to set up and install. 
 - January 16th: 
-  - got verified for CSC, able to clone both directories. Currently, working on initializing and running both. 
+  - got verified for CSC, able to clone both directories. Currently, working on initializing and running both.
+- January 17th:
+  - got in contact with Arango, they listed out a few ways to implement the functions:
+  1. Vector Similarity Functions
+  2. Full-Text Search with Semantic Features
+  3. Graph Traversal and Algorithms
+  4. User-Defined Functions (UDFs): Custom UDFs, External libraries, ArangoML
 
 #### Specific Questions:
 - 
