@@ -78,7 +78,7 @@
 - [ArangoDB Contributing Guide (includes building specifications)](https://github.com/arangodb/arangodb/blob/devel/CONTRIBUTING.md#building)
 
 #### Notes:
-- ArangoDB grammar is found in 'arangod/grammar.cpp' and 'arangodb/grammar.hpp' and 'grammar.y'. Have not identifying the exact files (and what they do), but that will be the next step.
+- ArangoDB grammar is found in 'arangod/Aql/grammar.cpp' and 'arangodb/Aql/grammar.hpp' and 'Aql/grammar.y'. Have not identifying the exact files (and what they do), but that will be the next step.
 - OpenCypher's grammar is found under 'grammar' (wow!). Includes a README.md with specifics about the grammar.
 
 #### Struggles:
@@ -93,7 +93,7 @@
 
 #### Team Tasks:
 1. ⏰ Setup ArangoDB and OpenCypher in CSC, create straightforward instructions for rest of team.
-2. ⏰ Beginning looking into documentation for both [OpenCypher](https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf) and [ArangoDB](https://docs.arangodb.com/3.11/aql/). 
+2. ⏰ Beginning looking into documentation for both [OpenCypher](https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf) and [ArangoDB](https://docs.arangodb.com/3.11/aql/), understand the language to build off of.  
 3. ⏰ Begin to understand how the CFG works in parallel with the rest of the codebase.
 
 #### In Progess:
@@ -105,6 +105,8 @@
   - decided to move to CSIL, with doing this, create documentation to set up and install. 
 - January 16th: 
   - got verified for CSC, able to clone both directories. Currently, working on initializing and running both. 
+- January 17th:
+  - looked into two different sites (listed below) recommended by Danish, regarding FAISS's usage with ArangoDB. Neither of them appear to be what we are doing, rather, they are just functionality to run after querying.
 
 #### Specific Questions:
 - 
@@ -117,9 +119,13 @@
 - [Cypher Railroad Diagram of Grammar](https://s3.amazonaws.com/artifacts.opencypher.org/M23/railroad/Cypher.html)
 - [Cypher Specific Style Guide](https://s3.amazonaws.com/artifacts.opencypher.org/M23/docs/style-guide.pdf)
 - [ArangoDB Contributing Guide (includes building specifications)](https://github.com/arangodb/arangodb/blob/devel/CONTRIBUTING.md#building)
+- [ArangoDB Interactive Tutorials](https://github.com/arangodb/interactive_tutorials/blob/master/README.md)
+- [fastgraphml](https://github.com/arangoml/fastgraphml/tree/main)
 
 #### Notes:
-- 
+- ArangoDB Interactive Tutorials - FAISS implementation is fragmented and unfinished. However, It appeared that they were using FAISS on top. Not as a querying capability. This is not what we are looking for. 
+- fastgraphml - This basically just involves the power of FAISS into fastgraphml. There is no difference between using FAISS's function and fastgraphml's. fastgraphml purely implements FAISS's functionality, which no added usage. However, it does add the capability to *store* embeddings back into FAISS. The implementation is to include the nearest neighbors and their respective cosine similarity as a list in the database. This could be helpful with ideas for how to store it - but not as a querying functionality.
+
 
 #### Struggles:
 - 
