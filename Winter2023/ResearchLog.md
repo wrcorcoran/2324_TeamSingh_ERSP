@@ -107,6 +107,11 @@
   - got verified for CSC, able to clone both directories. Currently, working on initializing and running both. 
 - January 17th:
   - looked into two different sites (listed below) recommended by Danish, regarding FAISS's usage with ArangoDB. Neither of them appear to be what we are doing, rather, they are just functionality to run after querying.
+  - got in contact with Arango, they listed out a few ways to implement the functions:
+  1. Vector Similarity Functions
+  2. Full-Text Search with Semantic Features
+  3. Graph Traversal and Algorithms
+  4. User-Defined Functions (UDFs): Custom UDFs, External libraries, ArangoML
 
 #### Specific Questions:
 - 
