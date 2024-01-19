@@ -112,6 +112,9 @@
   2. Full-Text Search with Semantic Features
   3. Graph Traversal and Algorithms
   4. User-Defined Functions (UDFs): Custom UDFs, External libraries, ArangoML
+- Janauary 19th:
+  - Beginning to setup ArangoDB and OpenCypher to run in terminal on CSC. 
+    - progress here
 
 #### Specific Questions:
 - 
