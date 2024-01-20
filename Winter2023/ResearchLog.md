@@ -114,7 +114,10 @@
   4. User-Defined Functions (UDFs): Custom UDFs, External libraries, ArangoML
 - Janauary 19th:
   - Beginning to setup ArangoDB and OpenCypher to run in terminal on CSC. 
-    - progress here
+    - Currently running into problems running FISH (ArangoDB)
+    - Cannot use ```yum```, but ArangoDB requires a fish shell to run. 
+    - Trying to find workarounds (installing Miniconda, then installing fish)
+    - Turns out those don't help too much, instead, have to make a singularity container. This requires me to install VirtualBox on my local, which I have. However, running into hiccups and will resume tomorrow, the 20th. Nvm, can use singularity straight in knot, but still weird. Need to figure it out.
 
 #### Specific Questions:
 - 
