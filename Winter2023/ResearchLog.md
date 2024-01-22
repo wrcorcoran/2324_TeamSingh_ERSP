@@ -118,6 +118,21 @@
     - Cannot use ```yum```, but ArangoDB requires a fish shell to run. 
     - Trying to find workarounds (installing Miniconda, then installing fish)
     - Turns out those don't help too much, instead, have to make a singularity container. This requires me to install VirtualBox on my local, which I have. However, running into hiccups and will resume tomorrow, the 20th. Nvm, can use singularity straight in knot, but still weird. Need to figure it out.
+- January 21st:
+  - Still struggling to get ArangoDB or OpenCypher to work, really frustrating actually. Difficult to get it working on CSC due to all of the permissions limitations (not allowed to sudo or anything).
+  - Working on my local machine (ArangoDB), not sure how to run tests and play around yet
+  - Currently, trying to find a way to get this to work on the CSC machine
+    - tried all sorts of things (docker images converted to singularity images, docker pull options, etc.)
+  - Everytime, run into errors on CSC machines because of sudo'ing or superuser. 
+    - Due to lack of permissions, I think this is likely unpossible, leaving us with a Dockerfile.
+  - Trying the built-in Dockerfile (local) for ArangoDB's Oskar. 
+    - This would allow us to work locally and in the same environment. Seems promising if they can install.
+    - Running into problems with fish and locating files. Testing that out. 
+  - However, ArangoDB is making progress locally... runs openSSL command for about 10 minutes upon installation... will report what happens after. 
+    - openSSL was fine - then get incompatible compiler errors
+  - If do not get successful build tonight, will drop ArangoDB and focus solely on getting openCypher to work.
+    - Most recent Docker build - 30 minutes. Will focus strictly on openCypher after this.
+
 
 #### Specific Questions:
 - 
@@ -139,7 +154,7 @@
 
 
 #### Struggles:
-- 
+- It seems to be almost impossible to get ArangoDB to work well on a single machine. CSC has limitations (not able to run sudo or Docker).
 
 <!-- Key Findings -->
 ## Key Findings
