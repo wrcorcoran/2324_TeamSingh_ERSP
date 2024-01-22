@@ -132,6 +132,11 @@
     - openSSL was fine - then get incompatible compiler errors
   - If do not get successful build tonight, will drop ArangoDB and focus solely on getting openCypher to work.
     - Most recent Docker build - 30 minutes. Will focus strictly on openCypher after this.
+    - This is how terminal appears:
+      ![error](assets/fisherror.png)
+
+  - OpenCypher error (installing any package on a ubuntu singularity shell in CSC):
+  ![error](assets/opencyphercsc.png)
 
 
 #### Specific Questions:
