@@ -15,6 +15,7 @@
       <ol>
         <li><a href="#week-one">Week One</a></li>
         <li><a href="#week-two">Week Two</a></li>
+        <li><a href="#week-three">Week Three</a></li>
       </ol>
     </li>
     <li><a href="#key-findings">Key Findings</a></li>
@@ -159,9 +160,49 @@
 
 - Zero progress being made on installing ArangoDB. Thinking it's probably wise to give that up. Moving to focus strictly on OpenCypher. If that doesn't work, will have to move to a smaller repository to build on top of. 
 
+### Week Three
+
+###### *Dates:* January 22-28, 2024
+
+###### *Main Objective:* Understand CFGs and play around in terminal
+
+#### Team Tasks:
+1. ✅ Setup ArangoDB and OpenCypher in CSC (possibly just OpenCypher), create straightforward instructions for rest of team.
+2. ⏰ Beginning looking into documentation for [OpenCypher](https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf) understand the language to build off of.  
+3. ⏰ Begin to understand how the CFG works in parallel with the rest of the codebase.
+4. ⏰ Develop a test suite for OpenCypher. 
+
+#### In Progess:
+- Figuring out how to develop a test suite (and optimize for usability) for OpenCypher.
+
+#### Accomplishments:
+- January 22:
+  - Got ArangoDB to build Dockerfile (however, couldn't recognize ssh-agent and Docker)
+  - Have decided to pause any work with ArangoDB. OpenCypher is more straightforward to operate. 
+  - Currently, going to focus on OpenCypher.
+    - Making great progress - farthest ever gotten on a build.
+    - Had to reset JAVA_HOME variable, tough with Dockerfile, eventually got it.
+    - Running deeper into test set for ```mvn``` project.
+    - BUILD SUCCESS! Bingo!
+  - Noted, TCK is their test suite. They used Cucumber files (.feature) to assist with tests.
+  - Have set up Ubuntu-based Dockerfile for OpenCypher.
+  - Updated documentation for OpenCypher usage.
+
+#### Specific Questions:
+- 
+
+#### Relevant Papers / Links:
+- [OpenCypher documentation](https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf)
+- [Context free schemas for data-XML (important for OpenCypher)](https://www.w3.org/People/Bos/Schema/schemas)
+- [Indicated as Syntax Tree Template by OpenCypher](https://www.w3.org/2001/XMLSchema)
+- [Cypher Railroad Diagram of Grammar](https://s3.amazonaws.com/artifacts.opencypher.org/M23/railroad/Cypher.html)
+- [Cypher Specific Style Guide](https://s3.amazonaws.com/artifacts.opencypher.org/M23/docs/style-guide.pdf)
+
+#### Notes:
+- We have decided to hault all work on ArangoDB.
 
 #### Struggles:
-- It seems to be almost impossible to get ArangoDB to work well on a single machine. CSC has limitations (not able to run sudo or Docker).
+- 
 
 <!-- Key Findings -->
 ## Key Findings
