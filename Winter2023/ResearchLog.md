@@ -140,6 +140,9 @@
   ![error](assets/opencyphercsc.png)
 
 
+
+
+
 #### Specific Questions:
 - 
 
@@ -200,6 +203,13 @@
 
 #### Notes:
 - We have decided to hault all work on ArangoDB.
+- Questions from Thomas: What does the output look like? What does the query language look like? Do we have to fun the intersections could we just, how    much of the Backend do we really really need to implement?
+  - A: output: big dictionary Arango Query: where it connect key and pairs and keeps track of the KNN but this is all for Arango specifically
+  - A: This should be modular because the ArangoDB will take in the graph and output the nodes that we want to then use those as an input for our FAISS function which will then have the nodes as the input and will output the information needed on those nodes
+- GraphQL: This is something we can use instead of openCypher → this makes it easier to create your own grammar. We can use this instead of open cypher. We should find a simpler query language that can help make this a foundation for our own query language.
+- Give openCypher another week but if this doesn’t work use GraphQL to get this project moving faster.
+- Task: Go through the documentation of ArangoDB or OpenCipher to figure out where to input FAISS search in our Query language. (look at the slides in the final presentation), Expecting a walk through next meeting. Where we implement the FAISS search and how it effects the outcomes.
+  - Find a simpler Graph Databases to understand how the grammar works, this will help us create a foundational grammar but also help us understand cypher better.
 
 #### Struggles:
 - 
