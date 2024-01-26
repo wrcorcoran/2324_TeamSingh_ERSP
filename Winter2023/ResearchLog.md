@@ -178,9 +178,6 @@
 6. Look into GraphQL. Can this help us?
 
 #### Task Breakdown:
-- 
-
-#### In Progess:
 niyati:
 - look into and understand graphql
 - look into smaller query languages
@@ -191,6 +188,9 @@ will:
 
 wyatt:
 - create a comprehensive list / explanation of open cypher’s grammar implementation
+
+#### In Progess:
+
 
 #### Accomplishments:
 - January 22:
