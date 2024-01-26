@@ -173,10 +173,24 @@
 1. ✅ Setup ArangoDB and OpenCypher in CSC (possibly just OpenCypher), create straightforward instructions for rest of team.
 2. ⏰ Beginning looking into documentation for [OpenCypher](https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf) understand the language to build off of.  
 3. ⏰ Begin to understand how the CFG works in parallel with the rest of the codebase.
-4. ⏰ Develop a test suite for OpenCypher. 
+4. ⏰ Locate a way we can insert FAISS into OpenCypher (if possible).
+5. Develop a test suite for OpenCypher. 
+6. Look into GraphQL. Can this help us?
+
+#### Task Breakdown:
+- 
 
 #### In Progess:
-- Figuring out how to develop a test suite (and optimize for usability) for OpenCypher.
+niyati:
+- look into and understand graphql
+- look into smaller query languages
+
+will:
+- find a place to input faiss into the language
+- look into the graphql setup
+
+wyatt:
+- create a comprehensive list / explanation of open cypher’s grammar implementation
 
 #### Accomplishments:
 - January 22:
