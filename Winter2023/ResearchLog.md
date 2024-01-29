@@ -52,16 +52,20 @@
 
 #### Accomplishments:
 - January 10th: 
-  - rearranged GitHub to be more friendly towards the year's project. Added space for research logs and key findings, glossary, etc.
+  - Will:
+    - rearranged GitHub to be more friendly towards the year's project. Added space for research logs and key findings, glossary, etc.
 - January 12th: 
-  - forked codebases for both ArangoDB and OpenCypher, [arangodb_esrp](https://github.com/wrcorcoran/arangodb_ersp) and [opencypher](https://github.com/wrcorcoran/openCypher_ersp).
-  - updated README.md for both and added collaborators along with proper permissions.
-  - located directory for grammars in both codebases.
+  - Will:
+    - forked codebases for both ArangoDB and OpenCypher, [arangodb_esrp](https://github.com/wrcorcoran/arangodb_ersp) and [opencypher](https://github.com/wrcorcoran/openCypher_ersp).
+    - updated README.md for both and added collaborators along with proper permissions.
+    - located directory for grammars in both codebases.
 - January 13th:
-  - located ```grammar_tools```, which the Grammar specifications by openCypher. 
-  - Tried to run both ArangoDB and OpenCypher's GitHubs and ran into errors for both. See ```Struggles``` for more information.
-  - Working on following the ArangoDB specifications for [contributing](https://github.com/arangodb/arangodb/blob/devel/CONTRIBUTING.md#building).
-  - Niyati sent messages to both teams to ask if they are working on a similar functionality to what we could "use."Is there a function on both these    platforms to query the graph and the latent space?
+  - Will:
+    - located ```grammar_tools```, which the Grammar specifications by openCypher. 
+    - Tried to run both ArangoDB and OpenCypher's GitHubs and ran into errors for both. See ```Struggles``` for more information.
+    - Working on following the ArangoDB specifications for [contributing](https://github.com/arangodb/arangodb/blob/devel/CONTRIBUTING.md#building).
+  - Niyati:
+    - Niyati sent messages to both teams to ask if they are working on a similar functionality to what we could "use."Is there a function on both these    platforms to query the graph and the latent space?
 
 #### Specific Questions:
 - What is Gherkin? Encountered it while looking into the OpenCypher codebase.
@@ -102,41 +106,46 @@
 
 #### Accomplishments:
 - January 15th:
-  - decided that the requirements to set up a Dockerfile for each would be too much, as they both require a large amount of steps.
-  - decided to move to CSIL, with doing this, create documentation to set up and install. 
+  - Will:
+    - decided that the requirements to set up a Dockerfile for each would be too much, as they both require a large amount of steps. 
+    - decided to move to CSIL, with doing this, create documentation to set up and install. 
 - January 16th: 
   - got verified for CSC, able to clone both directories. Currently, working on initializing and running both. 
 - January 17th:
-  - looked into two different sites (listed below) recommended by Danish, regarding FAISS's usage with ArangoDB. Neither of them appear to be what we are doing, rather, they are just functionality to run after querying.
-  - got in contact with Arango, they listed out a few ways to implement the functions:
-  1. Vector Similarity Functions
-  2. Full-Text Search with Semantic Features
-  3. Graph Traversal and Algorithms
-  4. User-Defined Functions (UDFs): Custom UDFs, External libraries, ArangoML
+  - Will:
+    - looked into two different sites (listed below) recommended by Danish, regarding FAISS's usage with ArangoDB. Neither of them appear to be what we are doing, rather, they are just functionality to run after querying.
+  - Niyati:
+    - got in contact with Arango, they listed out a few ways to implement the functions:
+    1. Vector Similarity Functions
+    2. Full-Text Search with Semantic Features
+    3. Graph Traversal and Algorithms
+    4. User-Defined Functions (UDFs): Custom UDFs, External libraries, ArangoML
 - Janauary 19th:
-  - Beginning to setup ArangoDB and OpenCypher to run in terminal on CSC. 
-    - Currently running into problems running FISH (ArangoDB)
-    - Cannot use ```yum```, but ArangoDB requires a fish shell to run. 
-    - Trying to find workarounds (installing Miniconda, then installing fish)
-    - Turns out those don't help too much, instead, have to make a singularity container. This requires me to install VirtualBox on my local, which I have. However, running into hiccups and will resume tomorrow, the 20th. Nvm, can use singularity straight in knot, but still weird. Need to figure it out.
+  - Will:
+    - Beginning to setup ArangoDB and OpenCypher to run in terminal on CSC. 
+      - Currently running into problems running FISH (ArangoDB)
+      - Cannot use ```yum```, but ArangoDB requires a fish shell to run. 
+      - Trying to find workarounds (installing Miniconda, then installing fish)
+      - Turns out those don't help too much, instead, have to make a singularity container. This requires me to install VirtualBox on my local, which I have. However, running into hiccups and will resume tomorrow, the 20th. Nvm, can use singularity straight in knot, but still weird. Need to figure it out.
 - January 21st:
-  - Still struggling to get ArangoDB or OpenCypher to work, really frustrating actually. Difficult to get it working on CSC due to all of the permissions limitations (not allowed to sudo or anything).
-  - Working on my local machine (ArangoDB), not sure how to run tests and play around yet
-  - Currently, trying to find a way to get this to work on the CSC machine
-    - tried all sorts of things (docker images converted to singularity images, docker pull options, etc.)
-  - Everytime, run into errors on CSC machines because of sudo'ing or superuser. 
-    - Due to lack of permissions, I think this is likely unpossible, leaving us with a Dockerfile.
-  - Trying the built-in Dockerfile (local) for ArangoDB's Oskar. 
-    - This would allow us to work locally and in the same environment. Seems promising if they can install.
-    - Running into problems with fish and locating files. Testing that out. 
-  - However, ArangoDB is making progress locally... runs openSSL command for about 10 minutes upon installation... will report what happens after. 
-    - openSSL was fine - then get incompatible compiler errors
-  - If do not get successful build tonight, will drop ArangoDB and focus solely on getting openCypher to work.
-    - Most recent Docker build - 30 minutes. Will focus strictly on openCypher after this.
-    - This is how terminal appears:
+  - Will:
+    - Still struggling to get ArangoDB or OpenCypher to work, really frustrating actually. Difficult to get it working on CSC due to all of the permissions limitations (not allowed to sudo or anything).
+    - Working on my local machine (ArangoDB), not sure how to run tests and play around yet
+    - Currently, trying to find a way to get this to work on the CSC machine
+      - tried all sorts of things (docker images converted to singularity images, docker pull options, etc.)
+    - Everytime, run into errors on CSC machines because of sudo'ing or superuser. 
+      - Due to lack of permissions, I think this is likely unpossible, leaving us with a Dockerfile.
+    - Trying the built-in Dockerfile (local) for ArangoDB's Oskar. 
+      - This would allow us to work locally and in the same environment. Seems promising if they can install.
+      - Running into problems with fish and locating files. Testing that out. 
+    - However, ArangoDB is making progress locally... runs openSSL command for about 10 minutes upon installation... will report what happens after. 
+      - openSSL was fine - then get incompatible compiler errors
+    - If do not get successful build tonight, will drop ArangoDB and focus solely on getting openCypher to work.
+      - Most recent Docker build - 30 minutes. Will focus strictly on openCypher after this.
+      - This is how terminal appears:
       ![error](assets/fisherror.png)
 
-  - OpenCypher error (installing any package on a ubuntu singularity shell in CSC):
+    - OpenCypher error (installing any package on a ubuntu singularity shell in CSC):
   ![error](assets/opencyphercsc.png)
 
 
@@ -183,8 +192,8 @@ niyati:
 - look into smaller query languages
 
 will:
-- find a place to input faiss into the language
-- look into the graphql setup
+- ⏰ find a place to input faiss into the language
+- ⏰ look into the graphql setup (or other graphdb we choose)
 
 wyatt:
 - create a comprehensive list / explanation of open cypher’s grammar implementation
@@ -194,16 +203,29 @@ wyatt:
 
 #### Accomplishments:
 - January 22:
-  - Got ArangoDB to build Dockerfile (however, couldn't recognize ssh-agent and Docker)
-  - Have decided to pause any work with ArangoDB. OpenCypher is more straightforward to operate. 
-  - Currently, going to focus on OpenCypher.
-    - Making great progress - farthest ever gotten on a build.
-    - Had to reset JAVA_HOME variable, tough with Dockerfile, eventually got it.
-    - Running deeper into test set for ```mvn``` project.
-    - BUILD SUCCESS! Bingo!
-  - Noted, TCK is their test suite. They used Cucumber files (.feature) to assist with tests.
-  - Have set up Ubuntu-based Dockerfile for OpenCypher.
-  - Updated documentation for OpenCypher usage.
+  - Will:
+    - Got ArangoDB to build Dockerfile (however, couldn't recognize ssh-agent and Docker)
+    - Have decided to pause any work with ArangoDB. OpenCypher is more straightforward to operate. 
+    - Currently, going to focus on OpenCypher.
+      - Making great progress - farthest ever gotten on a build.
+      - Had to reset JAVA_HOME variable, tough with Dockerfile, eventually got it.
+      - Running deeper into test set for ```mvn``` project.
+      - BUILD SUCCESS! Bingo!
+    - Noted, TCK is their test suite. They used Cucumber files (.feature) to assist with tests.
+    - Have set up Ubuntu-based Dockerfile for OpenCypher.
+    - Updated documentation for OpenCypher usage.
+- January 28:
+  - Will:
+    - Looking into Cypher implementation. Looking for ways we can run a query.
+    - Definitely doable in OpenCypher. The querying and commands link to a function in a Java Program. We can use these programs to implement.
+    - **Notes**:
+      - Basic pieces (terminals, non-terminals, xml classes, types, all defined in ```ocGrammar.xsd```)
+      - More specific usages (and exact parsing) implemented in various files (```basic-grammar.xml, cypher.xml, pre-parser.xml```)
+      - The actual implementation is handle in ```tools/grammar/src/main```. There are various files here that do the behind the scenes DB work (and the parsing). They store all information as parse trees (or so it seems, didn't focus too much on it.)
+    - Here is an example of an OpenCypher query:
+    ![query](assets/research-example.png)
+    - **How could we do this (i.e. what is the implementation)**:
+      - here
 
 #### Specific Questions:
 - 
