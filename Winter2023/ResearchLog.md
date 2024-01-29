@@ -357,6 +357,7 @@ wyatt:
   - It's a shame that ArangoDB is such a cluster, because I think their entire codebase is public, and we'd be able to edit right on top of it. However, OpenCypher is purely just specification.
   - Nonetheless, I still outlined what *could* be an example of a query.
 - (Will) EdgeDB is also another plausible idea. Relational database with high quality UDFs. Could package the UDFs in an interface (or some built-on-top functionality [maybe a ```.whl```]). This could be more beneficial than working in a very modern codebase (as EdgeDB is...) and certainly better than working in a legacy codebase like OpenCypher. 
+- (Will) **My gut feeling** is we are going to want to pivot to UDFs and packaging them into functionality, rather than designing a literal query language. 
 
 #### Struggles:
 - 
