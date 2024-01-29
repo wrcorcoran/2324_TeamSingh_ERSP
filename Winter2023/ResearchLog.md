@@ -235,8 +235,6 @@ wyatt:
         <opt>&WS;<non-terminal ref="Where"/></opt>
       </production>
       ```
-      - Add similar lines to:
-        - temp
 
 #### Specific Questions:
 - 
@@ -303,7 +301,10 @@ wyatt:
       - ```basic-grammar.xml```
         - vocabulary, true/false, operations like $+$, $-$, $\times$, $\div$, etc. 
     - **How is OpenCypher implemented?**
-      - here
+      - Complex, but it is an ANTLR G4 grammar.
+      - Many, many JAVA files, but I think many of them are parsing and we can ignore. 
+      - A better question is how are the operations implemented?
+        - This is left relatively unanswered by the files. It feels somewhat incomplete.
     - **How could we do this (i.e. what is the implementation)**:
       - Add XML lines to the ```grammar.xml``` file
       ```XML
@@ -313,8 +314,13 @@ wyatt:
         <opt>&WS;<non-terminal ref="Where"/></opt>
       </production>
       ```
-      - Add similar lines to:
-        - temp
+    - **What would the query look like?**
+      ```
+      WITH m, mask_embedding, movie_embedding,
+          SIMILAR_TO(mask_embedding, movie_embedding)
+          AS similarity_score
+      ORDER BY similarity_score DESC LIMIT 5
+      ```
 
 #### Specific Questions:
 - 
@@ -327,9 +333,10 @@ wyatt:
 - [Cypher Specific Style Guide](https://s3.amazonaws.com/artifacts.opencypher.org/M23/docs/style-guide.pdf)
 
 #### Notes:
-- GraphQL: This is something we can use instead of openCypher → this makes it easier to create your own grammar. We can use this instead of open cypher. We should find a simpler query language that can help make this a foundation for our own query language.
-- Task: Go through the documentation of OpenCypher to figure out where to input FAISS search in our Query language. (look at the slides in the final presentation), Expecting a walk through next meeting. Where we implement the FAISS search and how it effects the outcomes.
-  - Find a simpler Graph Databases to understand how the grammar works, this will help us create a foundational grammar but also help us understand cypher better.
+- (Will) I think considering GraphQL might be a good idea. OpenCypher feels incomplete. This leads me to believe that much of the implementation (and exactly what we want to do) is done on the Neo4J side (and behind the scenes). What is publicly available of OpenCypher seems to purely be a specification and Parser with no operations. 
+  - Because of this, building on top of GraphQL might be a better idea. This can give us a way to implement the funtionality, because as far as I can tell, we are missing half of a codebase for Cypher. 
+  - It's a shame that ArangoDB is such a cluster, because I think their entire codebase is public, and we'd be able to edit right on top of it. However, OpenCypher is purely just specification.
+  - Nonetheless, I still outlined what *could* be an example of a query.
 
 #### Struggles:
 - 
