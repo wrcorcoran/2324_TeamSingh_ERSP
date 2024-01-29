@@ -222,6 +222,7 @@ wyatt:
       - Basic pieces (terminals, non-terminals, xml classes, types, all defined in ```ocGrammar.xsd```)
       - More specific usages (and exact parsing) implemented in various files (```basic-grammar.xml, cypher.xml, pre-parser.xml```)
       - The actual implementation is handle in ```tools/grammar/src/main```. There are various files here that do the behind the scenes DB work (and the parsing). They store all information as parse trees (or so it seems, didn't focus too much on it.)
+      - Would make sense to use the ```WITH``` command. ```WITH``` basically appends/combines/changes results with a subquery before moving to the next line.
     - Here is an example of an OpenCypher query:
     ![query](assets/research-example.png)
     - **How could we do this (i.e. what is the implementation)**:
