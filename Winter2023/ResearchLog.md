@@ -16,6 +16,7 @@
         <li><a href="#week-one">Week One</a></li>
         <li><a href="#week-two">Week Two</a></li>
         <li><a href="#week-three">Week Three</a></li>
+        <li><a href="#week-four">Week Four</a></li>
       </ol>
     </li>
     <li><a href="#key-findings">Key Findings</a></li>
@@ -235,7 +236,7 @@ wyatt:
       </production>
       ```
       - Add similar lines to:
-        - tmp
+        - temp
 
 #### Specific Questions:
 - 
@@ -255,6 +256,79 @@ wyatt:
 - GraphQL: This is something we can use instead of openCypher → this makes it easier to create your own grammar. We can use this instead of open cypher. We should find a simpler query language that can help make this a foundation for our own query language.
 - Give openCypher another week but if this doesn’t work use GraphQL to get this project moving faster.
 - Task: Go through the documentation of ArangoDB or OpenCipher to figure out where to input FAISS search in our Query language. (look at the slides in the final presentation), Expecting a walk through next meeting. Where we implement the FAISS search and how it effects the outcomes.
+  - Find a simpler Graph Databases to understand how the grammar works, this will help us create a foundational grammar but also help us understand cypher better.
+
+#### Struggles:
+- 
+
+### Week Four
+
+###### *Dates:* January 29-February 4, 2024
+
+###### *Main Objective:* Determine how we can implement in OpenCypher. Do we need to change to GraphQL?
+
+#### Team Tasks:
+1. ⏰ Beginning looking into documentation for [OpenCypher](https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf) understand the language to build off of.  
+2. ⏰ Begin to understand how the CFG works in parallel with the rest of the codebase.
+3. ⏰ Locate a way we can insert FAISS into OpenCypher (if possible).
+5. ⏰ Look into GraphQL. Can this help us?
+
+#### Task Breakdown:
+niyati:
+- look into and understand graphql
+- look into smaller query languages
+
+will:
+- ⏰ find a place to input faiss into the language
+- ⏰ look into the graphql setup (or other graphdb we choose)
+
+wyatt:
+- create a comprehensive list / explanation of open cypher’s grammar implementation
+
+#### In Progess:
+
+
+#### Accomplishments:
+- January 29:
+  - Will:
+    - **What do the OpenCypher files do?**
+      - ```ocGrammar.xml```
+        - grammar, production, sequence, non-terminal, character, etc...
+        - basic definition for the XML usage
+      - ```cypher.xml```
+        - query types: single, multiple, etc.
+        - "statements" focusing on insertion and deletion
+          - also indexing and relations
+        - clauses: handling most operations (see documentation for full list and use case)
+      - ```basic-grammar.xml```
+        - vocabulary, true/false, operations like $+$, $-$, $\times$, $\div$, etc. 
+    - **How is OpenCypher implemented?**
+      - here
+    - **How could we do this (i.e. what is the implementation)**:
+      - Add XML lines to the ```grammar.xml``` file
+      ```XML
+      <production name="Nearest" scope:rule="new">
+        Nearest
+        <non-terminal ref="ProjectionBody"/>
+        <opt>&WS;<non-terminal ref="Where"/></opt>
+      </production>
+      ```
+      - Add similar lines to:
+        - temp
+
+#### Specific Questions:
+- 
+
+#### Relevant Papers / Links:
+- [OpenCypher documentation](https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf)
+- [Context free schemas for data-XML (important for OpenCypher)](https://www.w3.org/People/Bos/Schema/schemas)
+- [Indicated as Syntax Tree Template by OpenCypher](https://www.w3.org/2001/XMLSchema)
+- [Cypher Railroad Diagram of Grammar](https://s3.amazonaws.com/artifacts.opencypher.org/M23/railroad/Cypher.html)
+- [Cypher Specific Style Guide](https://s3.amazonaws.com/artifacts.opencypher.org/M23/docs/style-guide.pdf)
+
+#### Notes:
+- GraphQL: This is something we can use instead of openCypher → this makes it easier to create your own grammar. We can use this instead of open cypher. We should find a simpler query language that can help make this a foundation for our own query language.
+- Task: Go through the documentation of OpenCypher to figure out where to input FAISS search in our Query language. (look at the slides in the final presentation), Expecting a walk through next meeting. Where we implement the FAISS search and how it effects the outcomes.
   - Find a simpler Graph Databases to understand how the grammar works, this will help us create a foundational grammar but also help us understand cypher better.
 
 #### Struggles:
