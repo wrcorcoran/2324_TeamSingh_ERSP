@@ -225,7 +225,16 @@ wyatt:
     - Here is an example of an OpenCypher query:
     ![query](assets/research-example.png)
     - **How could we do this (i.e. what is the implementation)**:
-      - here
+      - Add XML lines to the ```grammar.xml``` file
+      ```XML
+      <production name="Nearest" scope:rule="new">
+        Nearest
+        <non-terminal ref="ProjectionBody"/>
+        <opt>&WS;<non-terminal ref="Where"/></opt>
+      </production>
+      ```
+      - Add similar lines to:
+        - tmp
 
 #### Specific Questions:
 - 
