@@ -343,6 +343,7 @@ wyatt:
 - What about pivoting and focusing on implementing a functionality? Why can we *not* do this?
   - What if instead of implementing as a query, we just implement an abstraction on top? Interface that works with a query under the hood?
   - What about building advanced UDFs? It seems our struggle isn't in building the functionality, it seems to be regarding the *query* implementation.
+- **Idea:** Kind of far out there..., but what if we developed a layer which took a query. In this query, it contains a portion which is Cypher and a part which pertains to our FAISS functionality. We'd have to strictly write a functionality and language definition. However, instead of editing the codebase of Cypher, we could gather the portion of the query which is supposed to be dedicated to Cypher, and take the rest for our query... a little ways out there...
 
 #### Relevant Papers / Links:
 - [OpenCypher documentation](https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf)
