@@ -321,9 +321,28 @@ wyatt:
           AS similarity_score
       ORDER BY similarity_score DESC LIMIT 5
       ```
+   - **What is GraphQL?**
+     - A way to manage querying across APIs. Not specifically used for graph data.
+     - However, there are *mutations.* These can work to specific exactly what data we want.
+     - However, we can query EXACTLY what we want. This could be very helpful as it functions mroe like a query language.
+   - **How would we use GraphQL?**
+     - I'm not really sure. This seems to be something used specifically for APIs, so if we were going to do that, it would make *more* sense to implement powerful UDFs.
+   - **EdgeDB** is interesting.
+     - Relational database...what if you insert relations to embeddings and give them a weighted relation (somehow, possible a precomupted FAISS)...
+       - This could be done as a UDF?...
+       - Example UDF in EdgeDB:
+      ``` EdgeDB
+      create function pig_latin(val: str) -> str
+        using (
+          select val[1:] ++ val[0] ++ 'ay'
+        );
+      ```
+      - Problem here is you would have compute on the fly...but that's fine...more efficient likely
 
 #### Specific Questions:
-- 
+- What about pivoting and focusing on implementing a functionality? Why can we *not* do this?
+  - What if instead of implementing as a query, we just implement an abstraction on top? Interface that works with a query under the hood?
+  - What about building advanced UDFs? It seems our struggle isn't in building the functionality, it seems to be regarding the *query* implementation.
 
 #### Relevant Papers / Links:
 - [OpenCypher documentation](https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf)
@@ -337,6 +356,7 @@ wyatt:
   - Because of this, building on top of GraphQL might be a better idea. This can give us a way to implement the funtionality, because as far as I can tell, we are missing half of a codebase for Cypher. 
   - It's a shame that ArangoDB is such a cluster, because I think their entire codebase is public, and we'd be able to edit right on top of it. However, OpenCypher is purely just specification.
   - Nonetheless, I still outlined what *could* be an example of a query.
+- (Will) EdgeDB is also another plausible idea. Relational database with high quality UDFs. Could package the UDFs in an interface (or some built-on-top functionality [maybe a ```.whl```]). This could be more beneficial than working in a very modern codebase (as EdgeDB is...) and certainly better than working in a legacy codebase like OpenCypher. 
 
 #### Struggles:
 - 
