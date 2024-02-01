@@ -360,6 +360,29 @@ wyatt:
 - (Will) EdgeDB is also another plausible idea. Relational database with high quality UDFs. Could package the UDFs in an interface (or some built-on-top functionality [maybe a ```.whl```]). This could be more beneficial than working in a very modern codebase (as EdgeDB is...) and certainly better than working in a legacy codebase like OpenCypher. 
 - (Will) **My gut feeling** is we are going to want to pivot to UDFs and packaging them into functionality, rather than designing a literal query language. 
 
+- (Wyatt) **FROM DANISH MEETING**:
+  - Minimum edge bet bf perturbation
+    - Some graph edges are much more important
+    - Budget: how many changes you can afford to make on the graph
+    - So minimize budget and maximize the change on the graph
+    - How many changes can i afford to make without messing up the graph?
+    - Lipschitz constant??? Can i bound my output change by a linear value of my input change
+    - Come up with a heuristic that can map all the sets of edges that make the same output label based on the same input
+    - Fixed ML gives certain output
+
+    - Goal of our project:
+      - Identify a set of edges which can be added and not modify the embeddings set by the model (i.e. which edges are safe).
+      - Focus on three initial traits:
+        - Degree (low degree vs high degree?)
+        - Centrality
+        - Homophily
+  - Neural Collapse
+    - Occurs due to overtraining and leaves no room for unseen data. Leave confidence at 80-95%
+
+    - Goal of our project:
+      - Does neural collapse happen in Graphs?
+      - Can GNNs overfit graph data and lead to neural collapse? 
+
 #### Struggles:
 - 
 
