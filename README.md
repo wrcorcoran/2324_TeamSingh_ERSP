@@ -45,6 +45,8 @@ ArangoDB fork: [**arangodb_ersp**](https://github.com/wrcorcoran/arangodb_ersp)
 
 OpenCypher fork: [**openCypher_ersp**](https://github.com/wrcorcoran/openCypher_ersp)
 
+Minimum Edge Set Perturbation: [**minimum-edge-set-perturbation**](https://github.com/wrcorcoran/minimum-edge-set-perturbation)
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.

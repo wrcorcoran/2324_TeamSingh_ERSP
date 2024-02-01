@@ -357,6 +357,8 @@ wyatt:
   ![example](./assets/image.png)
       - This can lead to serious problems with model accuracy, as it is no longer able to generalize.
       - We want to know if this is a phenomenon that occurs in Graph Neural Networks. Whether it is or isn't is yet to be studied.
+ - (Will) Created new repository for the MESP problem, see it [here](https://github.com/wrcorcoran/minimum-edge-set-perturbation). 
+   - Started to play around with the dataset and building a model.
  
 
 #### Specific Questions:
