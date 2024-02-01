@@ -266,19 +266,26 @@ wyatt:
 ###### *Main Objective:* Determine how we can implement in OpenCypher. Do we need to change to GraphQL?
 
 #### Team Tasks:
-1. ⏰ Beginning looking into documentation for [OpenCypher](https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf) understand the language to build off of.  
-2. ⏰ Begin to understand how the CFG works in parallel with the rest of the codebase.
-3. ⏰ Locate a way we can insert FAISS into OpenCypher (if possible).
-5. ⏰ Look into GraphQL. Can this help us?
+1. ❌ Beginning looking into documentation for [OpenCypher](https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf) understand the language to build off of.  
+2. ❌ Begin to understand how the CFG works in parallel with the rest of the codebase.
+3. ❌ Locate a way we can insert FAISS into OpenCypher (if possible).
+4. ❌ Look into GraphQL. Can this help us?
+---
+After pivot:
 
+5. ⏰ Begin to play around with datasets.
+6. Understand the meaning of "centrality" and "homophily" with relation to graphs.
+7. Begin to think about the MESP problem.
+8. Begin to think about the NC problem.
+9. Verify that we no longer want to work with the QL problem.
 #### Task Breakdown:
 niyati:
 - look into and understand graphql
 - look into smaller query languages
 
 will:
-- ⏰ find a place to input faiss into the language
-- ⏰ look into the graphql setup (or other graphdb we choose)
+- ❌ find a place to input faiss into the language
+- ❌ look into the graphql setup (or other graphdb we choose)
 
 wyatt:
 - create a comprehensive list / explanation of open cypher’s grammar implementation
@@ -338,6 +345,19 @@ wyatt:
         );
       ```
       - Problem here is you would have compute on the fly...but that's fine...more efficient likely
+  
+### **PIVOT**
+---
+- February 1st:
+  - (Will) So, it seems that we are unlikely to find a solution for the querying problem. There is too much overhead required (meaning we need access to large DB platforms). However, we could implement the functionality, but we are unsure if it is worth it. Danish and Professor Singh have proposed the idea of us switching. There are two different project options.
+    1. **Minimum edge set perturbations**:
+      - *What is this?:* What is the set of all *combinations* of edges which can be added and have no effect on the original classification. Rather than the common adversarial product of "what is the minimum cost of edges we can add to change the classificaton?", we are targeting "what is the maximum cost of edges we can add to not change the classification?" Ideally, we would investigate certain characteristics of a graph (degree, homophily)    
+    2. **Neural collapse**: 
+      - *What is this?:* This is a common phenomenon in machine learning models. Once a model has been overfit, classifications begin to cluster. Here is an example:
+  ![example](./assets/image.png)
+      - This can lead to serious problems with model accuracy, as it is no longer able to generalize.
+      - We want to know if this is a phenomenon that occurs in Graph Neural Networks. Whether it is or isn't is yet to be studied.
+ 
 
 #### Specific Questions:
 - What about pivoting and focusing on implementing a functionality? Why can we *not* do this?
@@ -346,11 +366,12 @@ wyatt:
 - **Idea:** Kind of far out there..., but what if we developed a layer which took a query. In this query, it contains a portion which is Cypher and a part which pertains to our FAISS functionality. We'd have to strictly write a functionality and language definition. However, instead of editing the codebase of Cypher, we could gather the portion of the query which is supposed to be dedicated to Cypher, and take the rest for our query... a little ways out there...
 
 #### Relevant Papers / Links:
-- [OpenCypher documentation](https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf)
-- [Context free schemas for data-XML (important for OpenCypher)](https://www.w3.org/People/Bos/Schema/schemas)
-- [Indicated as Syntax Tree Template by OpenCypher](https://www.w3.org/2001/XMLSchema)
-- [Cypher Railroad Diagram of Grammar](https://s3.amazonaws.com/artifacts.opencypher.org/M23/railroad/Cypher.html)
-- [Cypher Specific Style Guide](https://s3.amazonaws.com/artifacts.opencypher.org/M23/docs/style-guide.pdf)
+- [A Neural Collapse Perspective on Feature Evolution in Graph Neural Networks](https://arxiv.org/pdf/2307.01951.pdf)
+  - [Code to said paper](https://github.com/kvignesh1420/gnn_collapse) 
+- [Centrality](https://en.wikipedia.org/wiki/Centrality)
+- [Homophily](https://en.wikipedia.org/wiki/Network_homophily)
+- [IS HOMOPHILY A NECESSITY FOR GRAPH NEURAL NETWORKS?](https://arxiv.org/pdf/2106.06134.pdf)
+- [How to train a model on the CORA dataset?](https://medium.com/mlearning-ai/ultimate-guide-to-graph-neural-networks-1-cora-dataset-37338c04fe6f)
 
 #### Notes:
 - (Will) I think considering GraphQL might be a good idea. OpenCypher feels incomplete. This leads me to believe that much of the implementation (and exactly what we want to do) is done on the Neo4J side (and behind the scenes). What is publicly available of OpenCypher seems to purely be a specification and Parser with no operations. 
@@ -381,7 +402,7 @@ wyatt:
 
     - Goal of our project:
       - Does neural collapse happen in Graphs?
-      - Can GNNs overfit graph data and lead to neural collapse? 
+      - When GNNs overfit graph data can it lead to neural collapse? 
 
 #### Struggles:
 - 
