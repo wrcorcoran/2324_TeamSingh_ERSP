@@ -359,6 +359,12 @@ wyatt:
       - We want to know if this is a phenomenon that occurs in Graph Neural Networks. Whether it is or isn't is yet to be studied.
  - (Will) Created new repository for the MESP problem, see it [here](https://github.com/wrcorcoran/minimum-edge-set-perturbation). 
    - Started to play around with the dataset and building a model.
+ - February 2nd:
+   - (Will): For checks-and-bounds here are definitions:
+     - **Degree:** the total number of edges containing a specific node. In a directed graph, in degree is the number of entering edges and out degree is the number of exiting edges.
+     - **Centrality:** There are slightly different definitions based on the use, however, centrality indicates the most influential nodes (those with the highest centrality) or least influential nodes (those with lowest centrality). Different centrality types include: degree, closeness, eigenvalue, etc.
+       - *Closeness centrality:* average length of shortest path between specific node and all other nodes in the graph.
+     - **Homophily:** The idea that similar nodes will share edges and lie closer in a topological space. Likewise, any additional nodes added are likely to attach to similar nodes.
  
 
 #### Specific Questions:
