@@ -447,7 +447,7 @@ wyatt:
     - Uploaded template notebooks for the team to use:
       - Folders for ```embeddings```, ```experiments```, and the ```model```.
     - Began looking into how adding homophilic edges can effect the overall results compared to the ground truth of the model.
-    - A few interesting things (for more in depth, please go [here](null)):
+    - A few interesting things (for more in depth, please go [here](https://github.com/wrcorcoran/minimum-edge-set-perturbation/blob/main/homophily/experiments/FINDINGS.md):
       - Connecting all edges in a class to a single nodes DOES change the results of the graph, but rather marginally (by $0.2\%$).
       - Connecting two homophilic nodes, which were previously divorced, affected the results by anywhere between $0\%$ and $0.3\%$
 
