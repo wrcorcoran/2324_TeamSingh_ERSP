@@ -17,6 +17,7 @@
         <li><a href="#week-two">Week Two</a></li>
         <li><a href="#week-three">Week Three</a></li>
         <li><a href="#week-four">Week Four</a></li>
+        <li><a href="#week-five">Week Five</a></li>
       </ol>
     </li>
     <li><a href="#key-findings">Key Findings</a></li>
@@ -413,6 +414,53 @@ wyatt:
       - When GNNs overfit graph data can it lead to neural collapse? 
 
 #### Struggles:
+
+### Week Five
+
+###### *Dates:* February 5-February 11, 2024
+
+###### *Main Objective:* Begin to consider the MESP problem with three main heuristics. 
+
+#### Team Tasks:
+1. Will: Look into the *homophily* heuristic.
+2. Niyati: Look into the *degree* heuristic.
+3. Wyatt: Look into the *nearest-neighbors* heuristic.
+
+#### In Progess:
+
+
+#### Accomplishments:
+- February 5th:
+  - Discussed our thoughts on the problems.
+  - The team seemed to most strongly favor the *Minimum Edge Set Perturbation* problem. It seemed we generally were more comfortable with this problem. As the team has more graph experience, this seemed to be more fit.
+- February 7th:
+  - Talked to Danish, told him we were leaning towards the MESP problem.
+  - He gave us a clearer definition of the heuristics and gave us some ideas for how to set up the model and play around. He gave us a clearer definition of the ground truth.
+  - He recommended we use the PODs for many of our tasks.
+  - The team installed Conda and is setting up a time to talk to him about using notebooks on the pods.
+- February 9th:
+  - Met with Thomas, discussed our progress.
+    - He gave us some thoughts about how the use of adversarial attack analysis was for robustness rather than a real scenario (often, although, it can happen).
+  - Continued to talk with the team about getting everything set up.
+- February 11th:
+  - Will:
+    - Uploaded template notebooks for the team to use:
+      - Folders for ```embeddings```, ```experiments```, and the ```model```.
+    - Began looking into how adding homophilic edges can effect the overall results compared to the ground truth of the model.
+    - A few interesting things (for more in depth, please go [here](null)):
+      - Connecting all edges in a class to a single nodes DOES change the results of the graph, but rather marginally (by $0.2\%$).
+      - Connecting two homophilic nodes, which were previously divorced, affected the results by anywhere between $0\%$ and $0.3\%$
+
+#### Specific Questions:
+- 
+
+#### Relevant Papers / Links:
+- [Centrality](https://en.wikipedia.org/wiki/Centrality)
+- [Homophily](https://en.wikipedia.org/wiki/Network_homophily)
+- [IS HOMOPHILY A NECESSITY FOR GRAPH NEURAL NETWORKS?](https://arxiv.org/pdf/2106.06134.pdf)
+- [How to train a model on the CORA dataset?](https://medium.com/mlearning-ai/ultimate-guide-to-graph-neural-networks-1-cora-dataset-37338c04fe6f)
+
+#### Notes:
 - 
 
 <!-- Key Findings -->

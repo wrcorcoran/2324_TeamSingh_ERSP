@@ -41,11 +41,15 @@
 ## Technology
 As we are investigating two different database softwares to build on top of, we have two different forks of those repositories. 
 
-ArangoDB fork: [**arangodb_ersp**](https://github.com/wrcorcoran/arangodb_ersp)
+Deprecated:
+- ArangoDB fork: [**arangodb_ersp**](https://github.com/wrcorcoran/arangodb_ersp)
+- OpenCypher fork: [**openCypher_ersp**](https://github.com/wrcorcoran/openCypher_ersp)
 
-OpenCypher fork: [**openCypher_ersp**](https://github.com/wrcorcoran/openCypher_ersp)
-
-Minimum Edge Set Perturbation: [**minimum-edge-set-perturbation**](https://github.com/wrcorcoran/minimum-edge-set-perturbation)
+Active:
+- Minimum Edge Set Perturbation: [**minimum-edge-set-perturbation**](https://github.com/wrcorcoran/minimum-edge-set-perturbation)
+  - Homophily: [**homophily**](https://github.com/wrcorcoran/minimum-edge-set-perturbation/tree/main/homophily)
+  - Degree: [**degree**](https://github.com/wrcorcoran/minimum-edge-set-perturbation/tree/main/degree)
+  - Common Neighbors: [**common-neighbors**](https://github.com/wrcorcoran/minimum-edge-set-perturbation/tree/main/common-neighbors)
 
 ## License
 
