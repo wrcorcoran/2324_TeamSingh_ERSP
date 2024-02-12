@@ -452,7 +452,8 @@ wyatt:
       - Connecting two homophilic nodes, which were previously divorced, affected the results by anywhere between $0\%$ and $0.3\%$
 
 #### Specific Questions:
-- 
+- Should we be using the ```test``` mask? Looking at ```DGL``` it tends to be the largest mask. Or, should we use the entire graph?
+  - In this case, better to use untrained data?
 
 #### Relevant Papers / Links:
 - [Centrality](https://en.wikipedia.org/wiki/Centrality)
