@@ -447,12 +447,19 @@ wyatt:
     - Uploaded template notebooks for the team to use:
       - Folders for ```embeddings```, ```experiments```, and the ```model```.
     - Began looking into how adding homophilic edges can effect the overall results compared to the ground truth of the model.
-    - A few interesting things (for more in depth, please go [here](https://github.com/wrcorcoran/minimum-edge-set-perturbation/blob/main/homophily/experiments/FINDINGS.md):
+    - A few interesting things (for more in depth, please go [here](https://github.com/wrcorcoran/minimum-edge-set-perturbation/blob/main/homophily/experiments/FINDINGS.md)):
       - Connecting all edges in a class to a single nodes DOES change the results of the graph, but rather marginally (by $0.2\%$).
       - Connecting two homophilic nodes, which were previously divorced, affected the results by anywhere between $0\%$ and $0.3\%$
+    - Given the formula
+      $$|added(n)| = \lfloor c \times h(n) \rfloor$$
+      where $c$ is some constant and $h(n)$ represents the number of homophilic edges. $added(n)$ is the set of edges added from a specific node. Basically, this limits the number of edges which can be added according to the pre-existing degree of homophilic edges. 
+      - Given values of $c$ less than $0.333$, there is a marginal change in the accuracy of the model. When $c = 0.1$, there is **no** change.
+      - Visit [here](https://github.com/wrcorcoran/minimum-edge-set-perturbation/blob/main/homophily/experiments/FINDINGS.md) for more information. 
+
 
 #### Specific Questions:
-- 
+- Should we be using the ```test``` mask? Looking at ```DGL``` it tends to be the largest mask. Or, should we use the entire graph?
+  - In this case, better to use untrained data?
 
 #### Relevant Papers / Links:
 - [Centrality](https://en.wikipedia.org/wiki/Centrality)
