@@ -18,6 +18,7 @@
         <li><a href="#week-three">Week Three</a></li>
         <li><a href="#week-four">Week Four</a></li>
         <li><a href="#week-five">Week Five</a></li>
+        <li><a href="#week-six">Week Six</a></li>
       </ol>
     </li>
     <li><a href="#key-findings">Key Findings</a></li>
@@ -503,6 +504,89 @@ wyatt:
   - In this case, better to use untrained data?
 
 #### Relevant Papers / Links:
+- [Centrality](https://en.wikipedia.org/wiki/Centrality)
+- [Homophily](https://en.wikipedia.org/wiki/Network_homophily)
+- [IS HOMOPHILY A NECESSITY FOR GRAPH NEURAL NETWORKS?](https://arxiv.org/pdf/2106.06134.pdf)
+- [How to train a model on the CORA dataset?](https://medium.com/mlearning-ai/ultimate-guide-to-graph-neural-networks-1-cora-dataset-37338c04fe6f)
+
+#### Notes:
+
+### Week Six
+
+###### *Dates:* February 12-February 18, 2024
+
+###### *Main Objective:* Continue to consider the MESP problem with three main heuristics. 
+
+#### Team Tasks:
+1. Will: Look into the *homophily* heuristic.
+2. Niyati: Look into the *degree* heuristic.
+3. Wyatt: Look into the *nearest-neighbors* heuristic.
+
+#### In Progess:
+
+
+#### Accomplishments:
+- February 12th:
+  - (Will):
+    - I ran an experiment, similar to the one above, but accidentally dropped the homophily aspect. Then, it was strictly a degree-based experiment. 
+    - Have recommended to Niyati to check out that experiment, so see those results when posted.
+- February 14th:
+  - Met with Danish. He helped us get our CNSI accounts up-and-running. 
+- February 15th:
+  - (Will):
+    - I spent time trying to figure out how to get DGL to work.
+    - Eventually, I came to the conclusion that it was unlikely, as Danish mentioned it tends to be pretty incompatible.
+    - Then, I moved to using PyTorch Geometric, but ran out of time to get anything figured out.
+  - (Wyatt):
+    - Wyatt spent time to figure out how to get PyTorch Geometric to work in our notebooks.
+    - Eventually, he got it up and running!
+- February 16th:
+  - Met with Thomas to verify we are still on a reasonable timeline and keep him informed.
+  
+
+
+#### Specific Questions:
+
+#### Relevant Papers / Links:
+- [Centrality](https://en.wikipedia.org/wiki/Centrality)
+- [Homophily](https://en.wikipedia.org/wiki/Network_homophily)
+- [IS HOMOPHILY A NECESSITY FOR GRAPH NEURAL NETWORKS?](https://arxiv.org/pdf/2106.06134.pdf)
+- [How to train a model on the CORA dataset?](https://medium.com/mlearning-ai/ultimate-guide-to-graph-neural-networks-1-cora-dataset-37338c04fe6f)
+
+#### Notes:
+- (Will): Week 6/7 are oddly my most midterm heavy weeks, so I've been pretty bogged down. Still making decent progress, not as much as I'd like to.
+- 
+### Week Seven
+
+###### *Dates:* February 19-February 25, 2024
+
+###### *Main Objective:* Continue to consider the MESP problem with three main heuristics. 
+
+#### Team Tasks:
+1. Will: Look into the *homophily* heuristic.
+2. Niyati: Look into the *degree* heuristic.
+3. Wyatt: Look into the *nearest-neighbors* heuristic.
+
+#### In Progess:
+
+
+#### Accomplishments:
+- February 21st:
+  - (Will):
+    - There are warnings importing ```torch_spare``` and ```pyg_lib```. These are *fine* to ignore.
+    - So, as we switched from DGL to PyTorch Geometric, a lot of the code that we had written was no longer useful.
+    - I went through and rewrote my original notebook (the same one I'd previously written for my experiments). There were a lot of problems which required me to find some ways to navigate things. 
+      - PyTorch Geometric doesn't *really* support interfacing with the graph in their toolkit.
+        - Therefore, I had to create functions to convert from ```networkx``` and back. Likewise, I had to make sure I didn't lose any data.
+      - I also built functions to manage the datasets (to prevent being overly verbose in the notebook).
+      - Likewise, I built functionality to add edges.
+      - Also, I built functionality to output the changes, the number of added edges, etc.
+      - All of this is reflected in ```util.py``` which is located in each directory.
+  
+#### Specific Questions:
+
+#### Relevant Papers / Links:
+- [PyTorch Geometric Data Documentation](https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.data.Data.html#torch_geometric.data.Data)
 - [Centrality](https://en.wikipedia.org/wiki/Centrality)
 - [Homophily](https://en.wikipedia.org/wiki/Network_homophily)
 - [IS HOMOPHILY A NECESSITY FOR GRAPH NEURAL NETWORKS?](https://arxiv.org/pdf/2106.06134.pdf)
