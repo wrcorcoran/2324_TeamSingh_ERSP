@@ -1,1 +1,7 @@
-# nothing atm
+Fall2023/intro-projects/MNIST
+*/basic-classification.pth
+*.npy
+*/corgie-ui/
+Fall2023/intro-projects/corgie-preprocess-server/
+Fall2023/intro-projects/MNIST/
+Fall2023/intro-projects/corgie-ui/
