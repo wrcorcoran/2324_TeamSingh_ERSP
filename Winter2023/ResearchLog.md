@@ -19,6 +19,8 @@
         <li><a href="#week-four">Week Four</a></li>
         <li><a href="#week-five">Week Five</a></li>
         <li><a href="#week-six">Week Six</a></li>
+        <li><a href="#week-seven">Week Seven</a></li>
+        <li><a href="#week-eight">Week Eight</a></li>
       </ol>
     </li>
     <li><a href="#key-findings">Key Findings</a></li>
