@@ -575,17 +575,17 @@ wyatt:
   - (Will):
     - For context, groundtruth in this model is $0.749$.
     - I had a few new driving questions/ideas that I wanted to explore:
-    - **What happens if we turn a connected component, limited to a certain class, into a clique?**
+    - **Using the original graph, what happens if we turn a connected component, where *all* of the nodes are from the same class, into a clique?**
       - Due to the small size of the CORA dataset, there are few connected components with size $> 1$ that reside in a single class. $2$ to be exact. While the accuracy was not changed, only $3$ edges were added, leaving this experiment relatively uninsightful.
-    - **What happens if we turn a connected component, limited to a certain class, with a certain density into a clique?**
+    - **Using the original graph, what happens if we turn a connected component with a certain density, where *all* of the nodes are from the same class, into a clique?**
       - Similar to the above example, the CORA dataset is too limited. No nodes were changed.
-    - **What happens if we turn a connected component, when considering ONLY edges in a certain class, into a clique?**
+    - **After building a subgraph for each class, what happens if we turn a connected component, in that subgraph, into a clique?**
       - This is where things start to get interesting.
       - First, I made a subgraph specific to the class, and then ran a connected components algorithm on it.
       - Upon cliquing an entire connected component, $4211$ edges are added, an increase of $79.78\%$.
       - The accuracy *rose* by 0.0230. 
       - While not stagnant, this is an incredibly minimal change for increasing the edge set by $4211$ edges.
-    - **What happens if we turn a connected component with a certain density *c*, when considering ONLY edges in a certain class, into a clique?**
+    - **After building a subgraph for each class, what happens if we turn a connected component with a certain density, in that subgraph, into a clique?**
       - Again, I made subgraphs respective to the class.
       - For density threshold $c$, I tested all multiples of $0.05$ from $0.05$ to $0.75$. The results are as follows:
 
@@ -607,7 +607,7 @@ wyatt:
         | 0.7     |   0   |    0   |
         | 0.75  |  0  |   0  |
       - We can see you are able to add an extremely large number of edges without much change in classification. However, there are no instances where exactly $0.00\%$ accuracy is changed.
-    - **What happens if we increase the density of a connected component, when considering ONLY edges in a certain class, by a certain threshold?**
+    - **After building a subgraph for each class, what happens if we increase the density of a connected component, in that subgraph, by some constant $c$?**
       - For the density increase constant, $c$, I tested: $1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55,$$1.6, 1.65, 1.70, 1.75, 1.80, 1.85, 1.9, 1.95, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100$
       - The results are as follows:
           | Value of C | Change in Edges | Change in Accuracy |
@@ -646,7 +646,41 @@ wyatt:
    - **What happens if we clique the graph irrespective to classes? Meaning, all connected components become cliques?**
      - The model fails. Expectedly.
      - Over $3$ million edges were added and accuracy decreased by $-0.5520$.
-     - This is expected. Moreso, I was interested to see what would happen
+     - This is expected. Moreso, I was interested to see what would happen.
+   - Next steps:
+     - Are these characteristics that hold to other graphs?
+     - What causes that plateau?
+     - Read the few papers.
+- March 3:
+    - (Will) I read two papers.
+    - This first is: [IS HOMOPHILY A NECESSITY FOR GRAPH NEURAL NETWORKS?](https://arxiv.org/pdf/2106.06134.pdf)
+      - I didn't expect to clean any new information from this paper. It corroborated my previous definition of *homophily*.
+      - It tried to figure out how to deal with graphs which were did not show homophily. Typically, message passing architectures (like a GCN) struggle with non-homophilous graphs. They explained several strategies. 
+      - However, it did lead to me to ponder: *what happens if you keep the edge ratio to all classes the same?*
+        - How would this work?: Take a measure of each node and which classes its edges connect to. In a strongly homophilous graph, the same-class edges would occur much more.
+        - Ideas?: Similar to the connected components strategy, what happens if you find all connected components and do the following, given a connected component $x$:
+          1. Iterate over all of the nodes in $x$. 
+          2. For each node $n$, find the number of edges which go to each class, $c_1,\ldots, c_i$. Divide this value by the number of classes. Now, each node has a *connectivity rate* corresponding to each class. 
+          3. Stochastically add edges in alignment with this rate up until a certain threshold $t$ (likely a degree increase).
+        - This attempts to maintain the neighborhood demographic for each node. Will there be any differences? We shall find out.
+      -  The second is: [Characterizing Graph Datasets for Node Classification: Homophily–Heterophily Dichotomy and Beyond](https://arxiv.org/pdf/2209.06177.pdf):
+         - This paper had no value to our research. They just listed different definitions of *homophily* and gave their two-sense on which was superior. Nothing that would answer any questions I have. 
+    - Results with other datasets:
+    - #### Other Datasets:
+      | PubMed Homophily | CORA Homophily | CiteSeer Homophily |
+      |:------------:|:-------------------:|:-------------------:|
+      | 0.802      | 0.810              | 0.734                |
+
+      Was there any data that didn't corroborate the previous experiments with the CORA datasets?
+
+      **PubMed**:
+      - The problem with PubMed was nodes seemed to generally have *less* edges. Therefore, while the results were the same, it took higher thresholds to achieve them. 
+        - In other words: the results were similar when compared to the \# of edges added instead of any constant $c$.
+      - Again, with most connected components, they were of size $1$ or $2$, which led to little change. However, the results were the same once PubMed added more edges (with higher constants).
+      - 
+      **CiteSeer**: 
+      - Similar to PubMed, the results seemed to be similar in regards to \# of edges added, rather than any constants. 
+      - CiteSeer did exhibit slight more extreme results, but this could be because the model didn't train as deeply. The results weren't alarmingly worse (less than $0.01$ for each). I'd like to train the model to a higher accuracy (currently, it's at 54\%) and see if that effects anything. But, I have trained the current model we have been using to convergence.
 #### Specific Questions:
 
 #### Relevant Papers / Links:
