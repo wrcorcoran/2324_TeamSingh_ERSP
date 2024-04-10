@@ -4,7 +4,7 @@
 ❌ - struggle / cannot complete
 -->
 
-# Winter 2023 Research Log
+# Winter 2024 Research Log
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
