@@ -4,7 +4,7 @@
 ❌ - struggle / cannot complete
 -->
 
-# Winter 2023 Research Log
+# Winter 2024 Research Log
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -21,6 +21,7 @@
         <li><a href="#week-six">Week Six</a></li>
         <li><a href="#week-seven">Week Seven</a></li>
         <li><a href="#week-eight">Week Eight</a></li>
+        <li><a href="#week-nine">Week Nine</a></li>
       </ol>
     </li>
     <li><a href="#key-findings">Key Findings</a></li>
@@ -689,6 +690,65 @@ wyatt:
 - [Homophily](https://en.wikipedia.org/wiki/Network_homophily)
 - [IS HOMOPHILY A NECESSITY FOR GRAPH NEURAL NETWORKS?](https://arxiv.org/pdf/2106.06134.pdf)
 - [How to train a model on the CORA dataset?](https://medium.com/mlearning-ai/ultimate-guide-to-graph-neural-networks-1-cora-dataset-37338c04fe6f)
+
+#### Notes:
+
+### Week Nine
+###### *Dates:* March 4-March 10, 2024
+
+###### *Main Objective:* Continue to consider the MESP problem with three main heuristics. 
+
+#### Team Tasks:
+1. Will: Look into the *homophily* heuristic.
+2. Niyati: Look into the *degree* heuristic.
+3. Wyatt: Look into the *nearest-neighbors* heuristic.
+
+#### In Progess:
+
+
+#### Accomplishments:
+- March 6th:
+  - (Will): 
+    - I implemented the experiment that I described in the group meeting yesterday. While the accuracy *improved*, it was by large amounts, and the strategy was relatively unsuccessful. 
+    - The experiment is as follows:
+      - For each node, calculate the number of edges to each class in its neighborhood.
+      - Increase the number of edges to each class by some rate ($1 + val$).
+    - This took me a long time to implement and get right. I spent probably 2-3 hours struggling to get it to run efficiently. The algorithm should have been $O(n^2)$, so it should have run with ease, but I must have had a bottleneck/incorrect implementation. 
+    - Then, eventually, I scrapped that implementation, and started from scratch. Pretty quickly, I got the experiment working. 
+    - For reference, here are the results:
+      | c value | Change in Edge (Percentage) | Accuracy Change |
+      |:-------:|:----------------------------:|:---------------:|
+      |   0.05  |            0.09%             |     +0.0010      |
+      |   0.1   |            0.81%             |     +0.0020      |
+      |   0.15  |            2.16%             |     +0.0080      |
+      |   0.2   |            5.67%             |     +0.0080      |
+      |   0.25  |            9.98%             |     +0.0120      |
+      |   0.3   |           11.01%             |     +0.0170      |
+      |   0.35  |           17.83%             |     +0.0280      |
+      |   0.4   |           20.54%             |     +0.0430      |
+      |   0.45  |           21.88%             |     +0.0330      |
+      |   0.5   |           34.69%             |     +0.0610      |
+      |   0.55  |           35.34%             |     +0.0620      |
+      |   0.6   |           37.95%             |     +0.0630      |
+      |   0.65  |           38.80%             |     +0.0600      |
+      |   0.7   |           46.04%             |     +0.0710      |
+      |   0.75  |           50.63%             |     +0.0710      |
+      |   0.8   |           53.35%             |     +0.0710      |
+      |   0.85  |           54.36%             |     +0.0730      |
+      |   0.9   |           56.01%             |     +0.0710      |
+      |   0.95  |           56.56%             |     +0.0740      |
+      |   1.0   |           93.65%             |     +0.1330      |
+
+    - For future work, I need to look into the convergence phenomenon. First, I plan on looking where the high/low degree nodes and when they are being added, per Danish's recommendation. As I have a Week 10 Midterm, progress likely will be slow.
+    - After this, I'm not sure where to go. The convergence phenomenon is the only lead I have. I've seen interesting results, mainly with the connect component - clique - density results, which I can attempt to solidify and strengthen.
+      - However, I get the feeling that generally modifying the *homophily* will improve accuracy of the model and not leave it unchanged.
+      - I also want to revisit my previous experiment from a few weeks ago where I was getting *negative* accuracy change after adding homophilic edges. This doesn't seem to corroborate with the results I just got, so it's possible there is a small mistake in either of these experiments.
+    - I think there's a good chance that our best improvements lie in the *nearest neighbors* heuristic. 
+    - One thing I just thought of, I wonder if you connect nodes which have a similar homophilic value, which were previously unconnected. I would guess this would strengthen the model, but there may be a way you can do it intelligently where the model is unchanged.
+
+#### Specific Questions:
+
+#### Relevant Papers / Links:
 
 #### Notes:
 - 
