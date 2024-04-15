@@ -14,6 +14,7 @@
       <a href="#weekly-updates">Weekly Updates</a>
       <ol>
         <li><a href="#week-two">Week Two</a></li>
+        <li><a href="#week-three">Week Three</a></li>
       </ol>
     </li>
   </ol>
@@ -70,6 +71,32 @@
         - None of the papers I read covered this. They gave the basic intution of Lipschitz constants and the change in input affecting the change in output. However, none of them delved any deeper than this. 
     - There was a paper I found that may give more context to finding a Lipschitz constant for GNNs: [here](https://openreview.net/forum?id=USbkt99SUT&referrer=%5Bthe%20profile%20of%20Chunhui%20Zhang%5D(%2Fprofile%3Fid%3D~Chunhui_Zhang1)). I recommended Niyati read it. 
     - I've also been working to get the figures. I've exhausted my computation time on Colab, so that's not helpful. I'm still waiting for a GPU on CNSI, so until I get that, I'm kind of handcuffed. Who knew it took so much time to get a couple of figures. Luckily, I think I have everything running on the notebook, so I should be able to just open it and run once I get a pod.
+
+#### Specific Questions:
+
+#### Relevant Papers / Links:
+
+#### Notes:
+### Week Two
+###### *Dates:* April 8-April 14, 2024
+
+###### *Main Objective:* Compile heuristic data and compare with adversarial attacks.
+
+#### Team Tasks:
+1. Will: Build models + compile data from adversarial attacks.
+2. Niyati & Wyatt: Compile previously recorded data.
+
+#### In Progess:
+
+
+#### Accomplishments:
+- April 15th:
+  - (Will) - Same issues as before:
+    - When I run the notebooks on colab, I do not run into memory issues (however, I can't do everything on colab because there's an hour GPU limit before the runtime is disconnected.)
+    - While running the notebooks on CNSI, I get a CUDA memory error after about 300 edges each time. I've tried the cache clearing/layer resizing as recommended from the PyTorch GitHub + Stack Overflow, but neither have worked. 
+    - As for GSAINT and GSAGE, in order to use them with DeepRobust, I have to implement wrapper classes. That's fine, it's just going to take a long time to get everything massaged correctly. 
+      - *Why is this the case?* In order to run attacks, DeepRobust requires the model to be structured like a DeepRobust model. The documentation is misleading because it says "working with PyTorch Geometric models", when in reality they are just using the DeepRobust models which are implemented on top of PyTorch Models. The Dpr2Pyg is just a conversion between datasets (i.e. if you wanted to use the preperturbed data).
+    - It's been a ton of work to see no results - hopefully the other team members were able to get results from the experiments I previously ran. That would purely be data collection and wouldn't require these nasty setup problems (and the CUDA memory errors).
 
 #### Specific Questions:
 
