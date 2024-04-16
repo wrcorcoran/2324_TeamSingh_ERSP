@@ -393,6 +393,8 @@ wyatt:
   - Nonetheless, I still outlined what *could* be an example of a query.
 - (Will) EdgeDB is also another plausible idea. Relational database with high quality UDFs. Could package the UDFs in an interface (or some built-on-top functionality [maybe a ```.whl```]). This could be more beneficial than working in a very modern codebase (as EdgeDB is...) and certainly better than working in a legacy codebase like OpenCypher. 
 - (Will) **My gut feeling** is we are going to want to pivot to UDFs and packaging them into functionality, rather than designing a literal query language. 
+- (Niyati) Did some research of small query language but it seems like the openCypher and ArangoDB are well known and are seen as the smaller query languages
+  - Danish mentioned GraphQL but it seems like it involves more API items. Breaking down openCypher took some time but I started to understand the patterns of the grammar.
 
 - (Wyatt) **FROM DANISH MEETING**:
   - Minimum edge bet bf perturbation
@@ -418,7 +420,7 @@ wyatt:
       - When GNNs overfit graph data can it lead to neural collapse? 
 
 #### Struggles:
-
+- (Niyati) Understanding openCypher was taking sometime for me, Will's notes was helpful.
 ### Week Five
 
 ###### *Dates:* February 5-February 11, 2024
@@ -426,9 +428,19 @@ wyatt:
 ###### *Main Objective:* Begin to consider the MESP problem with three main heuristics. 
 
 #### Team Tasks:
-1. Will: Look into the *homophily* heuristic.
-2. Niyati: Look into the *degree* heuristic.
-3. Wyatt: Look into the *nearest-neighbors* heuristic.
+- Will: Look into the *homophily* heuristic.
+- Niyati: Look into the *degree* heuristic.
+- Wyatt: Look into the *nearest-neighbors* heuristic.
+
+1. Pick a heuristic, dataset, and model
+2. Get clean graph output/classification
+3. Focus on edge addition based on heuristic of choice
+4. Start with nodes least likely to fail (high classification)
+5. Identify point of failure
+6. Find patterns across failed nodes
+7. Extraplate finding to other datasets
+8. Compare and analyze results
+9. 3 notebooks and 3 sets of analysis
 
 #### In Progess:
 
@@ -458,7 +470,36 @@ wyatt:
       $$|added(n)| = \lfloor c \times h(n) \rfloor$$
       where $c$ is some constant and $h(n)$ represents the number of homophilic edges. $added(n)$ is the set of edges added from a specific node. Basically, this limits the number of edges which can be added according to the pre-existing degree of homophilic edges. 
       - Given values of $c$ less than $0.333$, there is a marginal change in the accuracy of the model. When $c = 0.1$, there is **no** change.
-      - Visit [here](https://github.com/wrcorcoran/minimum-edge-set-perturbation/blob/main/homophily/experiments/FINDINGS.md) for more information. 
+      - Visit [here](https://github.com/wrcorcoran/minimum-edge-set-perturbation/blob/main/homophily/experiments/FINDINGS.md) for more information.
+
+- (Niyati) **FROM DANISH MEETING**:
+  - Which problem do we feel more inclined to work on?
+    - The edge set problem
+    - The problems are bound to intersect at some point
+    - Building the model is the easiest part
+  - Give each of us a task:
+    - Homophily - what you see after you connect each nodes
+      - Classification, output labels, start adding edges to two nodes in the same class
+      - Pick the nodes that have the highest classification confidence
+
+    - 256 embedding GNN it will output n = number of classifications
+    - Softmax = a GNN’s job is the give out numbers that deal with confidence 
+      - Soft max job to take the numbers and give out probabilities (90 percent confidence in a output condition)
+    - Avoid nodes that have low classification : Those are the most vulnerable, Adversaries would focus on that
+    - We want to focus on the nodes with higher classifications
+    - We have more room with higher classification accuracy nodes (what changes, the thresholds)
+    - Find out when it fails, what percent it fails at
+    - Identify patterns
+    - Working with GCN - compare this to other datasets
+    - Degrees: connect high degree nodes to high degree node, low to high, low to low (has to be the same classification)
+    - Common neighbors: try to connect ot the nodes that have the most common neighbors
+
+  - (Niyati) Struggling to download conda, it seems like to log into my CNSI account I have to be on campus so I wasn't able to get conda installed the first couple of days.
+    - I ended up downloading Miniconda because it was faster.
+    - I have to be on campus to work on the problem.
+
+
+    
 
 
 #### Specific Questions:
