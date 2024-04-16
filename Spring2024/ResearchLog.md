@@ -97,6 +97,13 @@
     - As for GSAINT and GSAGE, in order to use them with DeepRobust, I have to implement wrapper classes. That's fine, it's just going to take a long time to get everything massaged correctly. 
       - *Why is this the case?* In order to run attacks, DeepRobust requires the model to be structured like a DeepRobust model. The documentation is misleading because it says "working with PyTorch Geometric models", when in reality they are just using the DeepRobust models which are implemented on top of PyTorch Models. The Dpr2Pyg is just a conversion between datasets (i.e. if you wanted to use the preperturbed data).
     - It's been a ton of work to see no results - hopefully the other team members were able to get results from the experiments I previously ran. That would purely be data collection and wouldn't require these nasty setup problems (and the CUDA memory errors).
+    - Wasn't able to get a GPU for my new environment, so I worked on getting figures for each dataset regarding the experiment. This took a few hours of massaging, but eventually, I got all of them. The images are located in the directory I've sent to the team.
+- April 16th:
+  - (Will) - Still no GPU for the new environment, so I switched to using Colab. 
+    - I was able to build wrapper classes for DeepRobust attacks. These were for GSaint, GSage, and GAT. I've added those classes to the normal notebook folder. 
+    - Likewise, I was able to construct the entire notebooks for the attack figures. I tested everything on small perturbation rates (0.025, 0.05), just to verify that the notebooks work. They do.
+    - Due to Colab's random disconnections, I'm unable to use Colab to get the figures. 
+    - I've spent a ton of the last week or so on this, and I need to do my classwork. I've asked the rest of the team members to get the notebooks to work on CNSI and let them run. There are no mistakes in the notebook (as it works just fine in colab), so it must be an environment thing.
 
 #### Specific Questions:
 
