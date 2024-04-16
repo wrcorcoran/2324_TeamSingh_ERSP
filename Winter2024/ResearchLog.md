@@ -4,7 +4,7 @@
 ❌ - struggle / cannot complete
 -->
 
-# Winter 2023 Research Log
+# Winter 2024 Research Log
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -19,6 +19,9 @@
         <li><a href="#week-four">Week Four</a></li>
         <li><a href="#week-five">Week Five</a></li>
         <li><a href="#week-six">Week Six</a></li>
+        <li><a href="#week-seven">Week Seven</a></li>
+        <li><a href="#week-eight">Week Eight</a></li>
+        <li><a href="#week-nine">Week Nine</a></li>
       </ol>
     </li>
     <li><a href="#key-findings">Key Findings</a></li>
@@ -591,6 +594,202 @@ wyatt:
 - [Homophily](https://en.wikipedia.org/wiki/Network_homophily)
 - [IS HOMOPHILY A NECESSITY FOR GRAPH NEURAL NETWORKS?](https://arxiv.org/pdf/2106.06134.pdf)
 - [How to train a model on the CORA dataset?](https://medium.com/mlearning-ai/ultimate-guide-to-graph-neural-networks-1-cora-dataset-37338c04fe6f)
+
+#### Notes:
+- 
+
+### Week Eight
+
+###### *Dates:* February 26-March 4, 2024
+
+###### *Main Objective:* Continue to consider the MESP problem with three main heuristics. 
+
+#### Team Tasks:
+1. Will: Look into the *homophily* heuristic.
+2. Niyati: Look into the *degree* heuristic.
+3. Wyatt: Look into the *nearest-neighbors* heuristic.
+
+#### In Progess:
+
+
+#### Accomplishments:
+- February 28th:
+  - (Will):
+    - For context, groundtruth in this model is $0.749$.
+    - I had a few new driving questions/ideas that I wanted to explore:
+    - **Using the original graph, what happens if we turn a connected component, where *all* of the nodes are from the same class, into a clique?**
+      - Due to the small size of the CORA dataset, there are few connected components with size $> 1$ that reside in a single class. $2$ to be exact. While the accuracy was not changed, only $3$ edges were added, leaving this experiment relatively uninsightful.
+    - **Using the original graph, what happens if we turn a connected component with a certain density, where *all* of the nodes are from the same class, into a clique?**
+      - Similar to the above example, the CORA dataset is too limited. No nodes were changed.
+    - **After building a subgraph for each class, what happens if we turn a connected component, in that subgraph, into a clique?**
+      - This is where things start to get interesting.
+      - First, I made a subgraph specific to the class, and then ran a connected components algorithm on it.
+      - Upon cliquing an entire connected component, $4211$ edges are added, an increase of $79.78\%$.
+      - The accuracy *rose* by 0.0230. 
+      - While not stagnant, this is an incredibly minimal change for increasing the edge set by $4211$ edges.
+    - **After building a subgraph for each class, what happens if we turn a connected component with a certain density, in that subgraph, into a clique?**
+      - Again, I made subgraphs respective to the class.
+      - For density threshold $c$, I tested all multiples of $0.05$ from $0.05$ to $0.75$. The results are as follows:
+
+        | Value of C | Change in Edges | Change in Accuracy |
+        |:------------:|:--------:|:---------:|
+        | 0.05  |  2076 (39.33%) |   +0.0090  |
+        | 0.1     |   816 (15.46%) |    +0.0080   |
+        | 0.15  |  414 (7.84%) |   +0.0050  |
+        | 0.2     |   338 (6.4%)   |    +0.0040   |
+        | 0.25  |  161 (3.05%) |   +0.0020  |
+        | 0.3     |   140 (3.05%)  |    +0.0020   |
+        | 0.35  |  120 (2.65%) |   +0.0020  |
+        | 0.4     |   120 (2.27%)  |    +0.0020   |
+        | 0.45  |  99 (1.88%) |   +0.0010  |
+        | 0.5     |   83 (1.57%)  |    +0.0010   |
+        | 0.55  |  20 (0.38%) |   +0.0010  |
+        | 0.6     |   20  (0.38%) |    +0.0010   |
+        | 0.65  |  20  (0.38%) |   +0.0010  |
+        | 0.7     |   0   |    0   |
+        | 0.75  |  0  |   0  |
+      - We can see you are able to add an extremely large number of edges without much change in classification. However, there are no instances where exactly $0.00\%$ accuracy is changed.
+    - **After building a subgraph for each class, what happens if we increase the density of a connected component, in that subgraph, by some constant $c$?**
+      - For the density increase constant, $c$, I tested: $1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55,$$1.6, 1.65, 1.70, 1.75, 1.80, 1.85, 1.9, 1.95, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100$
+      - The results are as follows:
+          | Value of C | Change in Edges | Change in Accuracy |
+          |:------------:|:-------------------:|:-------------------:|
+          | 1.05           | 62 (1.17%)               | +0.0010                   |
+          | 1.1             | 78 (1.48%)               | +0.0020                   |
+          | 1.15           | 99 (1.88%)               | +0.0050                   |
+          | 1.2             | 114 (2.16%)             | +0.0040                   |
+          | 1.25           | 135 (2.56%)             | +0.0030                   |
+          | 1.3             | 159 (3.01%)             | +0.0040                   |
+          | 1.35           | 186 (3.52%)             | +0.0100                   |
+          | 1.4             | 202 (3.83%)             | +0.0080                   |
+          | 1.45           | 227 (4.30%)             | +0.0110                   |
+          | 1.5             | 243 (4.60%)             | +0.0100                   |
+          | 1.55           | 264 (5.00%)             | +0.0100                   |
+          | 1.6             | 281 (5.32%)             | +0.0070                   |
+          | 1.65           | 305 (5.78%)             | +0.0140                   |
+          | 1.7             | 330 (6.25%)             | +0.0110                   |
+          | 1.75           | 350 (6.63%)             | +0.0120                   |
+          | 1.8             | 367 (6.95%)             | +0.0160                   |
+          | 1.85           | 390 (7.39%)             | +0.0130                   |
+          | 1.9             | 408 (7.73%)             | +0.0160                   |
+          | 1.95           | 424 (8.03%)             | +0.0150                   |
+          | 2               | 433 (8.20%)             | +0.0140                   |
+          | 3               | 767 (14.53%)           | +0.0200                   |
+          | 4               | 1076 (20.39%)         | +0.0200                   |
+          | 5               | 1363 (25.82%)         | +0.0220                   |
+          | 6               | 1620 (30.69%)         | +0.0240                   |
+          | 7               | 1862 (35.28%)         | +0.0240                   |
+          | 8               | 2086 (39.52%)         | +0.0230                   |
+          | 9               | 2281 (43.22%)         | +0.0230                   |
+          | 10             | 2464 (46.68%)         | +0.0230                   |
+          | 100           | 4211 (79.78%)         | +0.0230                   |
+      -  Again, we are able to add a large amount of nodes with *little change*, but there are no changes which results in $0$ change.
+      -  However, the most interesting result seems to be that there is a convergence, as to the amount the model changes. I have **zero** explanation as to why, and it's something I'm going to be thinking about/looking into over the next few weeks.
+   - **What happens if we clique the graph irrespective to classes? Meaning, all connected components become cliques?**
+     - The model fails. Expectedly.
+     - Over $3$ million edges were added and accuracy decreased by $-0.5520$.
+     - This is expected. Moreso, I was interested to see what would happen.
+   - Next steps:
+     - Are these characteristics that hold to other graphs?
+     - What causes that plateau?
+     - Read the few papers.
+- March 3:
+    - (Will) I read two papers.
+    - This first is: [IS HOMOPHILY A NECESSITY FOR GRAPH NEURAL NETWORKS?](https://arxiv.org/pdf/2106.06134.pdf)
+      - I didn't expect to clean any new information from this paper. It corroborated my previous definition of *homophily*.
+      - It tried to figure out how to deal with graphs which were did not show homophily. Typically, message passing architectures (like a GCN) struggle with non-homophilous graphs. They explained several strategies. 
+      - However, it did lead to me to ponder: *what happens if you keep the edge ratio to all classes the same?*
+        - How would this work?: Take a measure of each node and which classes its edges connect to. In a strongly homophilous graph, the same-class edges would occur much more.
+        - Ideas?: Similar to the connected components strategy, what happens if you find all connected components and do the following, given a connected component $x$:
+          1. Iterate over all of the nodes in $x$. 
+          2. For each node $n$, find the number of edges which go to each class, $c_1,\ldots, c_i$. Divide this value by the number of classes. Now, each node has a *connectivity rate* corresponding to each class. 
+          3. Stochastically add edges in alignment with this rate up until a certain threshold $t$ (likely a degree increase).
+        - This attempts to maintain the neighborhood demographic for each node. Will there be any differences? We shall find out.
+      -  The second is: [Characterizing Graph Datasets for Node Classification: Homophily–Heterophily Dichotomy and Beyond](https://arxiv.org/pdf/2209.06177.pdf):
+         - This paper had no value to our research. They just listed different definitions of *homophily* and gave their two-sense on which was superior. Nothing that would answer any questions I have. 
+    - Results with other datasets:
+    - #### Other Datasets:
+      | PubMed Homophily | CORA Homophily | CiteSeer Homophily |
+      |:------------:|:-------------------:|:-------------------:|
+      | 0.802      | 0.810              | 0.734                |
+
+      Was there any data that didn't corroborate the previous experiments with the CORA datasets?
+
+      **PubMed**:
+      - The problem with PubMed was nodes seemed to generally have *less* edges. Therefore, while the results were the same, it took higher thresholds to achieve them. 
+        - In other words: the results were similar when compared to the \# of edges added instead of any constant $c$.
+      - Again, with most connected components, they were of size $1$ or $2$, which led to little change. However, the results were the same once PubMed added more edges (with higher constants).
+      - 
+      **CiteSeer**: 
+      - Similar to PubMed, the results seemed to be similar in regards to \# of edges added, rather than any constants. 
+      - CiteSeer did exhibit slight more extreme results, but this could be because the model didn't train as deeply. The results weren't alarmingly worse (less than $0.01$ for each). I'd like to train the model to a higher accuracy (currently, it's at 54\%) and see if that effects anything. But, I have trained the current model we have been using to convergence.
+#### Specific Questions:
+
+#### Relevant Papers / Links:
+- [PyTorch Geometric Data Documentation](https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.data.Data.html#torch_geometric.data.Data)
+- [Centrality](https://en.wikipedia.org/wiki/Centrality)
+- [Homophily](https://en.wikipedia.org/wiki/Network_homophily)
+- [IS HOMOPHILY A NECESSITY FOR GRAPH NEURAL NETWORKS?](https://arxiv.org/pdf/2106.06134.pdf)
+- [How to train a model on the CORA dataset?](https://medium.com/mlearning-ai/ultimate-guide-to-graph-neural-networks-1-cora-dataset-37338c04fe6f)
+
+#### Notes:
+
+### Week Nine
+###### *Dates:* March 4-March 10, 2024
+
+###### *Main Objective:* Continue to consider the MESP problem with three main heuristics. 
+
+#### Team Tasks:
+1. Will: Look into the *homophily* heuristic.
+2. Niyati: Look into the *degree* heuristic.
+3. Wyatt: Look into the *nearest-neighbors* heuristic.
+
+#### In Progess:
+
+
+#### Accomplishments:
+- March 6th:
+  - (Will): 
+    - I implemented the experiment that I described in the group meeting yesterday. While the accuracy *improved*, it was by large amounts, and the strategy was relatively unsuccessful. 
+    - The experiment is as follows:
+      - For each node, calculate the number of edges to each class in its neighborhood.
+      - Increase the number of edges to each class by some rate ($1 + val$).
+    - This took me a long time to implement and get right. I spent probably 2-3 hours struggling to get it to run efficiently. The algorithm should have been $O(n^2)$, so it should have run with ease, but I must have had a bottleneck/incorrect implementation. 
+    - Then, eventually, I scrapped that implementation, and started from scratch. Pretty quickly, I got the experiment working. 
+    - For reference, here are the results:
+      | c value | Change in Edge (Percentage) | Accuracy Change |
+      |:-------:|:----------------------------:|:---------------:|
+      |   0.05  |            0.09%             |     +0.0010      |
+      |   0.1   |            0.81%             |     +0.0020      |
+      |   0.15  |            2.16%             |     +0.0080      |
+      |   0.2   |            5.67%             |     +0.0080      |
+      |   0.25  |            9.98%             |     +0.0120      |
+      |   0.3   |           11.01%             |     +0.0170      |
+      |   0.35  |           17.83%             |     +0.0280      |
+      |   0.4   |           20.54%             |     +0.0430      |
+      |   0.45  |           21.88%             |     +0.0330      |
+      |   0.5   |           34.69%             |     +0.0610      |
+      |   0.55  |           35.34%             |     +0.0620      |
+      |   0.6   |           37.95%             |     +0.0630      |
+      |   0.65  |           38.80%             |     +0.0600      |
+      |   0.7   |           46.04%             |     +0.0710      |
+      |   0.75  |           50.63%             |     +0.0710      |
+      |   0.8   |           53.35%             |     +0.0710      |
+      |   0.85  |           54.36%             |     +0.0730      |
+      |   0.9   |           56.01%             |     +0.0710      |
+      |   0.95  |           56.56%             |     +0.0740      |
+      |   1.0   |           93.65%             |     +0.1330      |
+
+    - For future work, I need to look into the convergence phenomenon. First, I plan on looking where the high/low degree nodes and when they are being added, per Danish's recommendation. As I have a Week 10 Midterm, progress likely will be slow.
+    - After this, I'm not sure where to go. The convergence phenomenon is the only lead I have. I've seen interesting results, mainly with the connect component - clique - density results, which I can attempt to solidify and strengthen.
+      - However, I get the feeling that generally modifying the *homophily* will improve accuracy of the model and not leave it unchanged.
+      - I also want to revisit my previous experiment from a few weeks ago where I was getting *negative* accuracy change after adding homophilic edges. This doesn't seem to corroborate with the results I just got, so it's possible there is a small mistake in either of these experiments.
+    - I think there's a good chance that our best improvements lie in the *nearest neighbors* heuristic. 
+    - One thing I just thought of, I wonder if you connect nodes which have a similar homophilic value, which were previously unconnected. I would guess this would strengthen the model, but there may be a way you can do it intelligently where the model is unchanged.
+
+#### Specific Questions:
+
+#### Relevant Papers / Links:
 
 #### Notes:
 - 
