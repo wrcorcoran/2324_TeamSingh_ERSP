@@ -77,8 +77,8 @@
 #### Relevant Papers / Links:
 
 #### Notes:
-### Week Two
-###### *Dates:* April 8-April 14, 2024
+### Week Three
+###### *Dates:* April 15-April 21, 2024
 
 ###### *Main Objective:* Compile heuristic data and compare with adversarial attacks.
 
@@ -104,6 +104,34 @@
     - Likewise, I was able to construct the entire notebooks for the attack figures. I tested everything on small perturbation rates (0.025, 0.05), just to verify that the notebooks work. They do.
     - Due to Colab's random disconnections, I'm unable to use Colab to get the figures. 
     - I've spent a ton of the last week or so on this, and I need to do my classwork. I've asked the rest of the team members to get the notebooks to work on CNSI and let them run. There are no mistakes in the notebook (as it works just fine in colab), so it must be an environment thing.
+- April 17th-21st:
+  - Finall got all of the figures to work. Lots of debugging and time later.
+
+#### Specific Questions:
+
+#### Relevant Papers / Links:
+
+#### Notes:
+
+### Week Four
+###### *Dates:* April 22-April 28, 2024
+
+###### *Main Objective:* Compile heuristic data and compare with adversarial attacks.
+
+#### Team Tasks:
+1. Will: Build models + compile data from adversarial attacks.
+2. Niyati & Wyatt: Compile previously recorded data.
+
+#### In Progess:
+
+
+#### Accomplishments:
+- April 23rd:
+  - (Will)
+    - Today, I implemented the k-hop experiment that I'd previously been playing around with. 
+    - However, it was not nearly as successful as I'd anticipated. It was dominated by the previous experiments which had been done. 
+    - Rather unfortunate, because it was a lot of time spent, but didn't end up amounting to any improvement.
+    
 
 #### Specific Questions:
 
