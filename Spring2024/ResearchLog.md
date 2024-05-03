@@ -155,10 +155,98 @@
 
 #### Accomplishments:
 - May 1st:
-  -  (Will):
+  -  (Will): 
+     -  Lots of updates:
+     -  First, I looked into ways to emperically calculate a higher bound than adversarial attacks. This way to no avail. Ironically, things I expected to cause problems (like attaching a lot of low degree nodes from other classes to a single high degree nodes) caused little change. However, connecting low degree nodes to high degree nodes of the same class caused a decent amount of change (about $1/3$ that of an adversarial attack). 
+     -  After talking to Danish, it doesn't seem reasonable to claim any single heuristic/adversarial attack can necessarily be an "upper" Lipschitz constant. If someone encounters a better one, then the "bound" was certainly not a bound. 
+     -  After this, I had a paradigm shift that this wasn't necessarily a heuristic problem, rather, it was a matter of getting labels not to change. Changing labels is what changes the accuracy. So, I looked at ways to minimize the change in labels. There are a few functions I'll reference throughout:
+        ```
+        fn notInNeighborhood(i, j):
+          get nodes in j's neighborhood
+          verify no nodes have the same class as 
+            node i
+
+        fn allIncNeighborhood(j):
+          verify all nodes in j's neighborhood are
+            incorrectly classified
+
+        fn getValidEdges(h, funcs):
+          get a list of all possible edges which
+            meet the following:
+              - both nodes have homophily below h
+              - not self loop/edge already exists
+              - neither prediction is
+                each other's correct class
+              - all fn in funcs are true
+          sort edges by lowest edge homophily
+        ```
+        **ALL ON TEST MASKS**
+           - The first algorithm is simple:
+             - getValidEdges(0.35, {})
+             - add [0, ... , 30%] perturbations
+             - results: change between +-0.002. 
+           - Can do the **opposite** with correctly classified (set h: 1), sort by maximum edge homophily, results: between +-0.003.
+
+          - Second algorithm: 
+            - getValidEdges(1, {allIncNeighborhood})
+            - add ALL edges in 5% increments (goes to 16,000 edges)
+            - results: ![img](/Spring2024/assets/img1.png)
+            - *ignore the sloppy naming / poor visualization*
+          
+          - Third algorithm:
+            - getValidEdges(0.5, {notInNeighborhood}) 
+            - get ALL edges in 5% increments (goes to ~160,000 edges)
+            - results: ![img](/Spring2024/assets/img2.png)
+          
+          **NO MASK** (entire graph)
+          - First algorithm:
+            - getValidEdges(1, {notInNeighborhood})
+            - get ALL edges in 5% increments (goes to ~160,000 edges)
+            - results: ![img](/Spring2024/assets/img3.png)
+          
+          - Second algorithm:
+            - getValidEdges(1, {notInNeighborhood, allIncNeighborhood})
+            - get ALL edges in 5% increments (goes to ~13,000 edges)
+            - results: ![img](/Spring2024/assets/img4.png)
+
+        **Next steps:**
+          - testing how this can be used for correctly classified (at a larger scale than just the one small example I gave) 
+
 - May 2nd:
   - (Will):
-- May 3rd:
+    - Today, I worked to explore how a greedy algorithm can be used to add edges.
+    - The algorithm is simple:
+    ```
+    fn greedy():
+      add random edge (i, j)
+      if change in accuracy > 0
+        remove edge
+      continue until budget met or edges exhausted
+    ```
+    - First algorithm:
+      - on test mask until ptb_rate of 1
+      - Notes: very easy to add. In fact, the accuracy was not changed in ANY case, so that graph is worthless. 
+      - However, there is an interesting pattern. The number of iterations needed is linear in the number of edges being added (instead of exponential). For example, the slope of the linear regression model based on (ptb_rates, itr_needed) was ~1.16.
+      - Here is the graph: ![img](/Spring2024/assets/img5.png)
+    - Second:
+      - repeat of above approach but with no mask. 
+      - Results were very similar, however, slope was 1.33.
+      - Results: ![img](/Spring2024/assets/img6.png)
+    - Runtime of this algorithm is $O(n^2 \times \text{GNN test complexity})$, which is a drastic cut of the $O(2^{n^2})$ time needed to exhaust all possible edge combinations.
+    - What are the implications of this? Not sure...possible a measure of robustness for each architecture?
+    
+    - As a note, I tried to add the edges which were "rejected." These edges were able to affect the accuracy of the graph at about 1/2 the rate that adversarial attacks were.
+
+  - (Will):
+    - Readings:
+      - I read "AN OPTIMIZATION-BASED FRAMEWORK FOR ADVERSARIAL DEFENCE OF GRAPH NEURAL NETWORKS VIA ADAPTIVE LIPSCHITZ REGULARIZATION".
+      - Here, they provided an actual calculation of the Lipschitz bounds:
+      ![img](/Spring2024/assets/img7.png)
+      - I'm yet to derive it myself to completely understand it/verify it. It uses a lot of spectral graph theory. I can give a reformed/explained version on Monday. 
+      - They give analysis of adversarial attacks. Fortunately, this work corroborates our results (the graphs were almost identical).
+      - They propose a new GNN model (that builds on top of another model and a denoise function), as follows:
+      ![img](/Spring2024/assets/img8.png)
+      - Although, not relevant to our use case, this model is shown to provide strength against adversarial attacks and perturbations.
   - (Wyatt): Here are the summaries on the papers I read.
     - Adversarial Attacks on Graph Structured Data: Graph vulnerabilities have not been extensively studied, but they impact and mislead the model once trained. The researchers propose different types of attacks (modifications on the graph), trying to fool the GNN models. They show that the attacks can effectively reduce the accuracy of GNNs on both node-level and graph-level classification tasks by simply modifying the edges. It concludes showing how susceptible GNNs are to attacks the necessity for potential defenses against attacks.
     - Task and Model Agnostic Adversarial Attack on GNNs: Paper 4: Targeted Attack via Neighborhood DIStortion (TANDIS) is an adversarial attack strategy designed to be effective regardless of the specific GNN model or task being targeted, meaning the attacker doesn't need any outside information about the model. TANDIS's approach distorts the neighborhood of nodes in a graph, which significantly degrades the performance of GNNs. It uses Graph Isomorphism Networks to navigate the GNNs and quickly distort the graph. Again, it shows that we really need some defenses for our GNNs.
