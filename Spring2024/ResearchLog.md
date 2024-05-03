@@ -15,6 +15,8 @@
       <ol>
         <li><a href="#week-two">Week Two</a></li>
         <li><a href="#week-three">Week Three</a></li>
+        <li><a href="#week-four">Week Four</a></li>
+        <li><a href="#week-five">Week Five</a></li>
       </ol>
     </li>
   </ol>
@@ -131,6 +133,31 @@
     - Today, I implemented the k-hop experiment that I'd previously been playing around with. 
     - However, it was not nearly as successful as I'd anticipated. It was dominated by the previous experiments which had been done. 
     - Rather unfortunate, because it was a lot of time spent, but didn't end up amounting to any improvement.
+    
+
+#### Specific Questions:
+
+#### Relevant Papers / Links:
+
+#### Notes:
+
+### Week Five
+###### *Dates:* April 29-May 5, 2024
+
+###### *Main Objective:* Compile heuristic data and compare with adversarial attacks.
+
+#### Team Tasks:
+1. Will: Build models + compile data from adversarial attacks.
+2. Niyati & Wyatt: Compile previously recorded data.
+
+#### In Progess:
+
+
+#### Accomplishments:
+- May 1st:
+  -  (Will):
+- May 2nd:
+  - (Will):
     
 
 #### Specific Questions:
