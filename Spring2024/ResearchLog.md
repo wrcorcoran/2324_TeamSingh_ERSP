@@ -190,24 +190,24 @@
           - Second algorithm: 
             - getValidEdges(1, {allIncNeighborhood})
             - add ALL edges in 5% increments (goes to 16,000 edges)
-            - results: ![img](/Spring2024/assets/img1.png)
+            - results: ![img](./assets/img1.png)
             - *ignore the sloppy naming / poor visualization*
           
           - Third algorithm:
             - getValidEdges(0.5, {notInNeighborhood}) 
             - get ALL edges in 5% increments (goes to ~160,000 edges)
-            - results: ![img](/Spring2024/assets/img2.png)
+            - results: ![img](./assets/img2.png)
           
           **NO MASK** (entire graph)
           - First algorithm:
             - getValidEdges(1, {notInNeighborhood})
             - get ALL edges in 5% increments (goes to ~160,000 edges)
-            - results: ![img](/Spring2024/assets/img3.png)
+            - results: ![img](./assets/img3.png)
           
           - Second algorithm:
             - getValidEdges(1, {notInNeighborhood, allIncNeighborhood})
             - get ALL edges in 5% increments (goes to ~13,000 edges)
-            - results: ![img](/Spring2024/assets/img4.png)
+            - results: ![img](./assets/img4.png)
 
         **Next steps:**
           - testing how this can be used for correctly classified (at a larger scale than just the one small example I gave) 
@@ -227,11 +227,11 @@
       - on test mask until ptb_rate of 1
       - Notes: very easy to add. In fact, the accuracy was not changed in ANY case, so that graph is worthless. 
       - However, there is an interesting pattern. The number of iterations needed is linear in the number of edges being added (instead of exponential). For example, the slope of the linear regression model based on (ptb_rates, itr_needed) was ~1.16.
-      - Here is the graph: ![img](/Spring2024/assets/img5.png)
+      - Here is the graph: ![img](./assets/img5.png)
     - Second:
       - repeat of above approach but with no mask. 
       - Results were very similar, however, slope was 1.33.
-      - Results: ![img](/Spring2024/assets/img6.png)
+      - Results: ![img](./assets/img6.png)
     - Runtime of this algorithm is $O(n^2 \times \text{GNN test complexity})$, which is a drastic cut of the $O(2^{n^2})$ time needed to exhaust all possible edge combinations.
     - What are the implications of this? Not sure...possible a measure of robustness for each architecture?
     
@@ -241,11 +241,11 @@
     - Readings:
       - I read "AN OPTIMIZATION-BASED FRAMEWORK FOR ADVERSARIAL DEFENCE OF GRAPH NEURAL NETWORKS VIA ADAPTIVE LIPSCHITZ REGULARIZATION".
       - Here, they provided an actual calculation of the Lipschitz bounds:
-      ![img](/Spring2024/assets/img7.png)
+      ![img](./assets/img7.png)
       - I'm yet to derive it myself to completely understand it/verify it. It uses a lot of spectral graph theory. I can give a reformed/explained version on Monday. 
       - They give analysis of adversarial attacks. Fortunately, this work corroborates our results (the graphs were almost identical).
       - They propose a new GNN model (that builds on top of another model and a denoise function), as follows:
-      ![img](/Spring2024/assets/img8.png)
+      ![img](./assets/img8.png)
       - Although, not relevant to our use case, this model is shown to provide strength against adversarial attacks and perturbations.
   - (Wyatt): Here are the summaries on the papers I read.
     - Adversarial Attacks on Graph Structured Data: Graph vulnerabilities have not been extensively studied, but they impact and mislead the model once trained. The researchers propose different types of attacks (modifications on the graph), trying to fool the GNN models. They show that the attacks can effectively reduce the accuracy of GNNs on both node-level and graph-level classification tasks by simply modifying the edges. It concludes showing how susceptible GNNs are to attacks the necessity for potential defenses against attacks.
