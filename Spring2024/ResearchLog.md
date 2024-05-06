@@ -250,6 +250,14 @@
   - (Wyatt): Here are the summaries on the papers I read.
     - Adversarial Attacks on Graph Structured Data: Graph vulnerabilities have not been extensively studied, but they impact and mislead the model once trained. The researchers propose different types of attacks (modifications on the graph), trying to fool the GNN models. They show that the attacks can effectively reduce the accuracy of GNNs on both node-level and graph-level classification tasks by simply modifying the edges. It concludes showing how susceptible GNNs are to attacks the necessity for potential defenses against attacks.
     - Task and Model Agnostic Adversarial Attack on GNNs: Paper 4: Targeted Attack via Neighborhood DIStortion (TANDIS) is an adversarial attack strategy designed to be effective regardless of the specific GNN model or task being targeted, meaning the attacker doesn't need any outside information about the model. TANDIS's approach distorts the neighborhood of nodes in a graph, which significantly degrades the performance of GNNs. It uses Graph Isomorphism Networks to navigate the GNNs and quickly distort the graph. Again, it shows that we really need some defenses for our GNNs.
+  - (Niyati):
+    - Readings: Adversarial Training for Graph Neural Networks: Pitfalls, solutions, and New Directions
+        - The paper presents an in-depth study on enhancing the robustness of Graph Neural Networks (GNNs) against adversarial attacks that target graph structures. Here’s a breakdown of its main points:
+        - 1. Adversarial Training Limitations: It starts by highlighting the limited success of traditional adversarial training methods in improving GNNs' defenses, especially against graph structure perturbations.
+        - 2. New Flexible GNN Architecture: The authors propose a new GNN architecture that features learnable graph diffusion. This flexibility allows the network to adapt more effectively to adversarial perturbations.
+        - 3. Novel Attack Strategy: They introduce a novel adversarial attack method that can handle complex perturbations, including those that affect multiple nodes simultaneously under both global and local constraints.
+        - 4. Empirical Validation: Through experiments, they demonstrate that their methods provide state-of-the-art defense, significantly improving the robustness of GNNs compared to existing approaches
+    
     
 
 #### Specific Questions:
