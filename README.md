@@ -9,7 +9,7 @@
     </li>
     <li><a href="#fall-summary">Fall Summary</a></li>
     <li><a href="#winter-summary">Winter Summary</a></li>
-    <li><a href="#spring-summary">Spring$$ Summary</a></li>
+    <li><a href="#spring-summary">Spring Summary</a></li>
     <li><a href="#technology">Technology</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
