@@ -264,11 +264,34 @@
     - Task and Model Agnostic Adversarial Attack on GNNs: Paper 4: Targeted Attack via Neighborhood DIStortion (TANDIS) is an adversarial attack strategy designed to be effective regardless of the specific GNN model or task being targeted, meaning the attacker doesn't need any outside information about the model. TANDIS's approach distorts the neighborhood of nodes in a graph, which significantly degrades the performance of GNNs. It uses Graph Isomorphism Networks to navigate the GNNs and quickly distort the graph. Again, it shows that we really need some defenses for our GNNs.
   - (Niyati):
     - Readings: Adversarial Training for Graph Neural Networks: Pitfalls, solutions, and New Directions
-        - The paper presents an in-depth study on enhancing the robustness of Graph Neural Networks (GNNs) against adversarial attacks that target graph structures. Here’s a breakdown of its main points:
-        - 1. Adversarial Training Limitations: It starts by highlighting the limited success of traditional adversarial training methods in improving GNNs' defenses, especially against graph structure perturbations.
-        - 2. New Flexible GNN Architecture: The authors propose a new GNN architecture that features learnable graph diffusion. This flexibility allows the network to adapt more effectively to adversarial perturbations.
-        - 3. Novel Attack Strategy: They introduce a novel adversarial attack method that can handle complex perturbations, including those that affect multiple nodes simultaneously under both global and local constraints.
-        - 4. Empirical Validation: Through experiments, they demonstrate that their methods provide state-of-the-art defense, significantly improving the robustness of GNNs compared to existing approaches
+    - Goals:
+      - Overcome limitations of the transductive learning setting:
+        - The model has access ot the entire graph during training, including both labeled and unlabeled nodes. This can lead to biased evaluations and potentially unrealistic robustness since the model can “memorize” the graph structure
+        - Authors want to avoid that
+        - Focus on inductive learning setting -> Robustness becomes more realistic
+      - Use flexible GNNs to adapt to adversarial attacks
+      - Implement realistic adversaries for structure perturbations with both global and local constraints
+        - Previous studies show global constraints werent tight allowing for unrealistic and excessive changes to the graph structure
+        - Realistic adversaries
+    - Section 2.1:
+      - Transductive Learning setting:
+        - Goal is to complete the labeling of nodes in partially labeled graph
+        - The setting is often used in graph learning tasks and many benchmark datasets (Cora, Citeseer, pubmed) are designed for transductive learning
+    - Theoretical Limitations:
+      - Perfect Robustness Through Memorization:
+        - Concept: Since the model has access to the entire graph during training, including the test nodes, it can achieve perfect robustness by memorizing the graph. This means it can remember the clean graph structure and ignore any adversarial changes at test time.
+        - Defense Algorithm A: A theoretical defense algorithm could simply replace any perturbed graph with the clean graph known from training. This would result in a model that is perfectly robust because it always uses the clean graph for predictions.
+        - Proposition 1: Formally, for any GNN fθfθ​, a modified model f~θf~​θ​ that always uses the clean graph can achieve perfect robustness, i.e., it will have the same predictions as fθfθ​ on the clean graph and will be unaffected by adversarial perturbations.
+        - Proposition 2: This approach leads to an optimal solution for adversarial training in the transductive setting, as it minimizes the maximal misclassification rate under attack through memorization.
+      - Experimental Results: Experiments show that most robustness gains are due to self-training rather than adversarial training. When self-training is removed, adversarial training alone can even hurt robustness.
+      - Conclusion: use inductive learning setting where test nodes are not seen during training
+
+    - Section 4: Adversarial Attack with Local Constraints
+      - Local constraints: ensure that perturbations remain realistic and not completely disrupting the graph structure
+      - Empirical evidence: experiments show that models trained without local constraints often ignore the graph structure leading to robust but less useful models
+        - Models trained with local constraints maintain robustness while still leveraging the graph structure
+      - LR-BCD method for generating adversarial attacks on graph structures. By incorporating both global and local constraints, LR-BCD ensures that perturbations remain realistic and do not overly disrupt the graph’s structure
+      - Method is efficient and scalable, making it practical for use in adversarial training and evaluation of GNN robustness
     
     
 
