@@ -247,6 +247,18 @@
       - They propose a new GNN model (that builds on top of another model and a denoise function), as follows:
       ![img](./assets/img8.png)
       - Although, not relevant to our use case, this model is shown to provide strength against adversarial attacks and perturbations.
+  
+    - Additional summaries:
+      - They propose a framework, *Adaptive Lipschitz Regularization Framework*:
+      - ![img](./assets/img10.png)
+      - The model attempts to iterative minimize the above objective function.
+      - LGNN is the loss of the GNN, LC is the lost of the noise removal function, and the rightmost side is the calculation of the Lipschitz constant with some regularization parameter gamma. 
+      - ![img](./assets/img9.png)
+      - Compared to other standard GCN frameworks it exhibits minimal change in accuracy and lower Lipschitz bounds. 
+      - They have similar approaches for the non-convex optimization problems. 
+      - ![img](./assets/img11.png)
+      - Again, we can see that the model performs well in comparison to other common GNN/GCN frameworks, under different attacks. On the left is the Metattack while the right is a Netattack.
+
   - (Wyatt): Here are the summaries on the papers I read.
     - Adversarial Attacks on Graph Structured Data: Graph vulnerabilities have not been extensively studied, but they impact and mislead the model once trained. The researchers propose different types of attacks (modifications on the graph), trying to fool the GNN models. They show that the attacks can effectively reduce the accuracy of GNNs on both node-level and graph-level classification tasks by simply modifying the edges. It concludes showing how susceptible GNNs are to attacks the necessity for potential defenses against attacks.
     - Task and Model Agnostic Adversarial Attack on GNNs: Paper 4: Targeted Attack via Neighborhood DIStortion (TANDIS) is an adversarial attack strategy designed to be effective regardless of the specific GNN model or task being targeted, meaning the attacker doesn't need any outside information about the model. TANDIS's approach distorts the neighborhood of nodes in a graph, which significantly degrades the performance of GNNs. It uses Graph Isomorphism Networks to navigate the GNNs and quickly distort the graph. Again, it shows that we really need some defenses for our GNNs.
